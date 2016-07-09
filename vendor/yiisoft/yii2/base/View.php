@@ -216,7 +216,6 @@ class View extends Component
     public function renderFile($viewFile, $params = [], $context = null)
     {
         $viewFile = Yii::getAlias($viewFile);
-
         if ($this->theme !== null) {
             $viewFile = $this->theme->applyTo($viewFile);
         }
@@ -251,7 +250,6 @@ class View extends Component
 
         array_pop($this->_viewFiles);
         $this->context = $oldContext;
-
         return $output;
     }
 
