@@ -93,6 +93,9 @@ class SiteController extends Controller
     }
     public function actionTest()
     {
+        $redis = Yii::$app->redis;
+        $redis->set('k','v');
+        var_dump($redis->get('k'));exit;
         return $this->render('test');
     }
 
