@@ -28,7 +28,7 @@ class BaseStringHelper
      */
     public static function byteLength($string)
     {
-        return mb_strlen($string, '8bit');
+        return strlen($string);
     }
 
     /**
@@ -43,7 +43,7 @@ class BaseStringHelper
      */
     public static function byteSubstr($string, $start, $length = null)
     {
-        return mb_substr($string, $start, $length === null ? mb_strlen($string, '8bit') : $length, '8bit');
+        return substr($string, $start, $length === null ? strlen($string) : $length);
     }
 
     /**

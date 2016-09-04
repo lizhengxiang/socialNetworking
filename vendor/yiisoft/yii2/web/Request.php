@@ -408,7 +408,7 @@ class Request extends \yii\base\Request
                 $this->_bodyParams = $_POST;
             } else {
                 $this->_bodyParams = [];
-                mb_parse_str($this->getRawBody(), $this->_bodyParams);
+             	parse_str($this->getRawBody(), $this->_bodyParams);
             }
         }
 
