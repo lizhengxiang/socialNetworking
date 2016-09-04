@@ -38,5 +38,6 @@ class LoginController extends Controller
             'model' => $model,
         ]);
     }
+    
 
 }
