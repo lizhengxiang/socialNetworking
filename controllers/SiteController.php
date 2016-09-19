@@ -2,12 +2,16 @@
 
 namespace app\controllers;
 
+use app\models\EntryForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\base\action;
+use yii\di\ServiceLocator;
+use yii\caching\FileCache;
 
 class SiteController extends Controller
 {
@@ -47,6 +51,10 @@ class SiteController extends Controller
         ];
     }
 
+    public function run(){
+        return "Hello World";
+    }
+
     public function actionIndex()
     {
         return $this->render('index');
@@ -54,10 +62,11 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        //throw new \yii\web\HttpException(500);
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
+        
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -67,6 +76,10 @@ class SiteController extends Controller
         ]);
     }
 
+   public function actionForward(){
+       return $this->redirect('http://socialnetworking.com');
+   }
+
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -74,9 +87,12 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+
+
     public function actionContact()
     {
         $model = new ContactForm();
+        echo $model->getAttributeLabel('firstName');
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
@@ -99,8 +115,19 @@ class SiteController extends Controller
         return $this->render('test');
     }
 
-    public function actionSay($message = 'Hello'){
-        return $this->render('say', ['message' => $message]);
+    public function actionHello($message = 'lizehngxiang'){
+        return json_encode($message);
+        return $this->render('say', ['message' => $message[0]]);
     }
-    
+
+    public function actionEntry(){
+        $key = Yii::$app->getSecurity()->generateRandomString(10);
+        $model = new EntryForm();
+        //var_dump(Yii::$app->request->post());exit();
+        if($model->load(Yii::$app->request->post()) && $model->validate()){
+            return $this->render('entry-confirm', ['model' => $model]);
+        }else{
+            return $this->render('entry', ['model' => $model]);
+        }
+    }
 }
