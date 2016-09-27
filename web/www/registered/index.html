@@ -10,9 +10,13 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/www/js/layer/layer.js"></script>
 </head>
-<body>
-<div class="row">
+<style>
+
+</style>
+<body >
+<div class="row" style="margin: 0px;">
     <div class="col-xs-8">image</div>
     <div class="col-xs-4" style="margin-top:90px; width: 350px;">
         <form id="frmSearch">
@@ -20,12 +24,13 @@
                 <option>请选择</option>
             </select>
             <select style="margin-top:20px;" id = "school" name="school"class="form-control">
+                <option>请选择</option>
             </select>
             <div class="form-group" style="margin-top:20px;">
-                <input  class="form-control" id="inputEmail" name="email" placeholder="邮箱">
+                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="邮箱">
             </div>
             <div class="form-group" style="margin-top:20px;">
-                <input  class="form-control" id="nickname" name="nickname" placeholder="昵称">
+                <input  class="form-control" id="nickname" name="nickname" placeholder="昵称字数个数（1-10)">
             </div>
             <div class="form-inline" style="margin-top:20px;">
                 <select id = "year" name="year" class="form-control" style="width:90px;">

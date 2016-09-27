@@ -11,7 +11,6 @@ class Registered extends ActiveRecord
         return[
             [['provinces', 'school','email','nickname','year','mouth','day'], 'required'],
             ['email', 'email'],
-
         ];
     }
 }

@@ -11,8 +11,152 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    li{
+        text-decoration: none;
+        list-style: none;
+    }
+    /*头部*/
+    .header{
+        width:100%;
+        height: 65px;
+        width:expression_r(document.body.clientWidth <= 1349? "1349px": "auto");
+        background-color: #27303F;
+    }
+    .header .head_center{
+        width:1200px;
+        height:65px;
+        margin:0 auto;
+    }
+    .header .login{
+        width:240px;
+        height:65px;
+        float:left;
+    }
+    .header .login img{
+        width:240px;
+        height:65px;
+    }
+    .header .login a{
+        width:240px;
+        height:65px;
+        display:block;
+    }
+    .head_center .head_nav{
+        width:620px;
+        height:65px;
+        float:left;
+    }
+    .head_center .head_nav ul{
+        margin-left:20px;
+        width:600px;
+        height:65px;
+    }
+    .head_center .head_nav ul li{
+        width:120px;
+        height:65px;
+        line-height:65px;
+        float:left;
+    }
+    .head_center .head_nav ul li a{
+        width:120px;
+        height:65px;
+        display:block;
+        text-align:center;
+        font-size:16px;
+        font-weight:bold;
+        font-family:"Microsoft YaHei";
+        color:#E8E8E8;
+        text-decoration:none;
+    }
+    .head_center .head_nav ul li a:hover{
+        color:#FFB800;
+    }
+    .head_login{
+        float:right;
+        width:340px;
+        height:65px;
+    }
+    .head_login img{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        margin:0;
+        margin-top:13px;
+        cursor:pointer;
+    }
+    .head_login li a{
+        width:80px;
+        height:65px;
+        float:left;
+        line-height:65px;
+        text-align:center;
+        font-size:16px;
+        font-weight:bold;
+        font-family:"Microsoft YaHei";
+        color:#E8E8E8;
+        text-decoration:none;
+    }
+    .login_nav{
+        float:right;
+    }
+    .login_nav li{
+        width:80px;
+        height:65px;
+        line-height:65px;
+        float:left;
+    }
+    .user_info{
+        float:right;
+        position:relative;
+    }
+    </style>
 <body>
-    <div class="row">
+<div id="header" class="header">
+    <div class="head_center">
+        <div class="login">
+            <a><img src="http://www.zhiliaoliao.com/Public/home_img/logo.png" alt="知了了网络"></a>
+        </div>
+        <div class="head_nav">
+            <ul>
+                <li>
+                    <a href="/home/index/index.html">主页</a>
+                </li>
+                <li>
+                    <a href="/home/choose/index.html">个人中心</a>
+                </li>
+                <li>
+                    <a href="/goods/goods/index.html">完美市场</a>
+                </li>
+                <li>
+                    <a href="/goods/goods/index.html">缘分搜索</a>
+                </li>
+            </ul>
+        </div>
+        <!--此处判断是否登陆-->
+        <div class="head_login">
+            <ul class="login_nav">
+                <li>
+                    <a href="/home/index/login.html"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> 登录</a>
+                </li>
+                <li>
+                    <a href="/home/index//register.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 注册</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin: 0px;">
+    <iframe src=""></iframe>
+</div>
+
+
+<div class="row" style="margin: 0px;">
         <div class="col-xs-8">image</div>
         <div class="col-xs-4" style="margin-top:90px; margin-right: -90px;">
             <div class="form-group">

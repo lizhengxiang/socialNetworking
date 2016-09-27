@@ -54,14 +54,17 @@ class RegisteredController extends Controller
      * 注册
      */
     public function actionRegistered(){
-        $model = new Registered();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $request = Yii::$app->request->post();
-            $data = $this->service->searchProvinces($request);
-            $data = json_encode($data);
-            return $data;
+        $request = Yii::$app->request->post();
+        //
+        if(preg_match("/^\d*$/",$request['provinces']) && preg_match("/^\d*$/",$request['school']) &&
+            preg_match("/^\d*$/",$request['year']) && preg_match("/^\d*$/",$request['mouth']) &&
+            preg_match("/^\d*$/",$request['day']) && !empty($request['email'])
+            && !empty($request['nickname'])
+        ){
+            $data = $this->service->Registered($request);
+            return $data = json_encode($data);
         }else{
-            throw new \yii\base\UserException('不允许为空',1004);
+            throw new \yii\base\UserException('所有的值不允许为空',1004);
         }
     }
 }

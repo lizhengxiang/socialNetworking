@@ -24,6 +24,12 @@ function load(module, method, params, callback) {
             if (callback)
                 callback(result);
         },
+        error:function (json) {
+            layer.msg(json['responseText'], {
+                offset: 0,
+                shift: 12
+            });
+        }
     });
 };
 
@@ -53,7 +59,7 @@ $(document).ready(function() {
         });
     });
     var year = '',mouth='',day='';
-    for(var i = 1880; i< 2016; i++){
+    for(var i = 1980; i< 2016; i++){
         year += '<option value ='+i+'>'+i+'</option>';
     }
     $("#year").append(year);
@@ -66,14 +72,83 @@ $(document).ready(function() {
     }
     $("#day").append(day);
     $("#registered").click(function () {
-        var registeredArgs = genSearchParams();
-        load('registered', 'registered', registeredArgs, function(resultData) {
-            var temp = '';
-            for(var i =0; i<resultData.length; i++){
-                temp += '<option value ='+resultData[i].id+'>'+resultData[i].name+'</option>';
-            }
-            $("#provinces").append(temp);
+        var tag = 0;
+        var registeredArgs =genSearchParams();
+        if(isNaN(registeredArgs[0].value)){
+            layer.tips('请选择省份', '#provinces', {
+                tips: [4, '#78BA32'],
+                tipsMore: true
+            });
+            tag = 1;
+        }
+        if(isNaN(registeredArgs[1].value)){
+            layer.tips('请选择学校', '#school', {
+                tips: [4, '#78BA32'],
+                tipsMore: true
+            });
+            tag = 1;
+        }
+        var reg = /(^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$)|(^$)/;
+        if(registeredArgs[2].value.length == 0 || !reg.test(registeredArgs[2].value)){
+            layer.tips('请填写正确的邮箱（xx@xx.com）', '#inputEmail', {
+                tips: [4, '#78BA32'],
+                tipsMore: true
+            });
+            tag = 1;
+        }
+        if(registeredArgs[3].value.length < 1 || registeredArgs[3].value.length > 10 ){
+            layer.tips('昵称字数个数（1-10)', '#nickname', {
+                tips: [4, '#78BA32'],
+                tipsMore: true
+            });
+            tag = 1;
+        }
+        if(!tag){
+            load('registered', 'registered', registeredArgs, function(resultData) {
+                if(resultData == 1){
+                    layer.msg('注册成功', {
+                        offset: 0,
+                        shift: 12
+                    });
+                }else {
+                    layer.msg('注册失败', {
+                        offset: 0,
+                        shift: 12
+                    });
+                }
+            });
+        }
+
+        //演示代码
+        layui.use('layim', function(layim){
+            var layim = layui.layim;
+            layim.config({
+                //配置客户信息
+                mine: {
+                    "username": "访客" //我的昵称
+                    ,"id": "100000123" //我的ID
+                    ,"status": "online" //在线状态 online：在线、hide：隐身
+                    ,"remark": "在深邃的编码世界，做一枚轻盈的纸飞机" //我的签名
+                    ,"avatar": "http://res.layui.com/images/fly/avatar/00.jpg" //我的头像
+                }
+                //开启客服模式
+                ,brief: true
+            });
+            //打开一个客服面板
+            layim.chat({
+                name: '在线客服一' //名称
+                ,type: 'kefu' //聊天类型
+                ,avatar: 'http://tp1.sinaimg.cn/5619439268/180/40030060651/1' //头像
+                ,id: 1111111 //定义唯一的id方便你处理信息
+            }).chat({
+                name: '在线客服二' //名称
+                ,type: 'kefu' //聊天类型
+                ,avatar: 'http://tp1.sinaimg.cn/5619439268/180/40030060651/1' //头像
+                ,id: 2222222 //定义唯一的id方便你处理信息
+            });
+            layim.setChatMin(); //收缩聊天面板
         });
+
         
     });
 })
