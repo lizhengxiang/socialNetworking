@@ -38,9 +38,12 @@ function startInit(iframeId, minHeight) {
     eval("window.IE9MoreRealHeight" + iframeId + "=0");
     window.setInterval("reinitIframe('" + iframeId + "'," + minHeight + ")", 100);
 }
+//iframe自适应
 startInit('mainFrame', 560);
-$(document).ready(function(){
-    function home() {
-        $("#mainFrame",parent.document.body).attr("src","/www/login/index.html");
-    }
-});
+//调用父类方式闪屏
+function ifrmLoaded() {
+    $("#footer").show();
+}
+function home() {
+    $("#mainFrame",parent.document.body).attr("src","/www/login/index.html");
+}
