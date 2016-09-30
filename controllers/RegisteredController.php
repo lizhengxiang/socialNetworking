@@ -3,14 +3,41 @@
 namespace app\controllers;
 use Yii;
 use yii\web\Controller;
+use yii\filters\AccessControl;
 use app\models\Registered;
 use app\services\RegisteredService;
 class RegisteredController extends Controller
 {
     private $service;
 
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['login', 'logout', 'signup','provinces'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['login', 'signup'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['provinces'],
+                        'roles' => ['@'],
+                    ],
+                ],
+                'denyCallback' => function ($rule, $action) {
+                    return $this->goBack();
+                }
+            ],
+        ];
+    }
+
     public function init()
     {
+        $this->behaviors();
         $this->service = new RegisteredService();
     }
 
@@ -23,6 +50,11 @@ class RegisteredController extends Controller
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+            'components' => [
+                'mailer' => [
+                    'class' => 'yii\swiftmailer\Mailer',
+                ],
             ],
         ];
     }
@@ -55,7 +87,7 @@ class RegisteredController extends Controller
      */
     public function actionRegistered(){
         $request = Yii::$app->request->post();
-        //
+        //验证输入的规则
         if(preg_match("/^\d*$/",$request['provinces']) && preg_match("/^\d*$/",$request['school']) &&
             preg_match("/^\d*$/",$request['year']) && preg_match("/^\d*$/",$request['mouth']) &&
             preg_match("/^\d*$/",$request['day']) && !empty($request['email'])
