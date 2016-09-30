@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" xmlns:200px>
 <head>
     <title></title>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
@@ -17,6 +17,9 @@
     <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
     <!-- or -->
     <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://socialnetworking.com/js/darktooltip/dist/darktooltip.css">
+    <script type="text/javascript" src="http://socialnetworking.com/js/darktooltip/dist/jquery.darktooltip.js"></script>
+
 </head>
 <style>
     .main-container {
@@ -34,9 +37,30 @@
             <div class="thumbnail">
                 <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" alt="">
                 <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    <div style="width: auto;height: 30px;">
+                        <div style="width: 30px; float: left">
+                            <div id="def-html" class="box" data-tooltip="#html-content">
+                                <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="28" width="28" id="abcd" data-toggle="tooltip" data-placement="top">
+                            </div>
+                            <div id="html-content" style="display:none;>
+                                <div style="width: 200px;height: 200px;">
+                                    <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="70" width="70">
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                        <div style="float: left;width: 200px">
+                            <p style="color: #292f33; font-weight:bold">Marvel Entertainment</p>
+                        </div>
+                        <div style="float: right;width: 80px;font-size: 13px;color:#8899a6; text-align:right">
+                            <p id="abc" data-toggle="tooltip" data-placement="top" title="2013年9月12日 12:56">120小时</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 10px; word-wrap:break-word">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.
+                    </p>
+
                 </div>
             </div>
         </div><!--/.item  -->
@@ -96,11 +120,20 @@
 
     </div> <!--/.masonry-container  -->
 </div>
+
+
+
 </body>
 
 <script type="text/javascript" >
-    (function( $ ) {
+    $("[data-toggle='tooltip']").tooltip();
+    $('#def-html').darkTooltip({
 
+    });
+    (function( $ ) {
+       /* var tooltip = $('<div>This will be the tooltip text. It even has an onclick event!</div>');
+        $('#abcd').data('powertip', tooltip);
+        console.log($('#abcd').data('powertip'));*/
         var $container = $('.masonry-container');
         $container.imagesLoaded( function () {
             $container.masonry({
@@ -108,6 +141,7 @@
                 itemSelector: '.item'
             });
         });
+        //$('#abcd').tooltip();
 
         //Reinitialize masonry inside each panel after the relative tab link is clicked -
         $('a[data-toggle=tab]').each(function () {
