@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US" xmlns:200px>
 <head>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>G7love</title>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/js/bootstrap/css/bootstrap.min.css">
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/public/js/jquery/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/www/js/layer/layer.js"></script>
-    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <!-- or -->
-    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
-    <!-- or -->
-    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://socialnetworking.com/js/darktooltip/dist/darktooltip.css">
-    <script type="text/javascript" src="http://socialnetworking.com/js/darktooltip/dist/jquery.darktooltip.js"></script>
-
+    <script src="/public/js/bootstrap/js/bootstrap.min.js"></script>
+    <!--提示信息-->
+    <script type="text/javascript" src="/public/js/layer/layer.js"></script>
+    <!--图片流-->
+    <script src="/public/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/public/js/imagesloaded/masonry.pkgd.min.js"></script>
+    <!--弹出框 -->
+    <link rel="stylesheet" type="text/css" href="/public/js/darktooltip/darktooltip.css">
+    <script type="text/javascript" src="/public/js/darktooltip/jquery.darktooltip.js"></script>
+    <!--vue.js-->
+    <script type="text/javascript" src="/public/js/vue/vue.js"></script>
 </head>
 <style>
     .main-container {
@@ -194,9 +195,9 @@
 
     </div> <!--/.masonry-container  -->
 </div>
+</body>
 
-
-
+<!--点击照片弹出模态框-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -235,15 +236,15 @@
                 </div>
                 <div style="width: auto;height: 35px; padding-top: 20px;">
                     <div style="width: 35px; float: left">
-                            <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="35" width="35">
+                        <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="35" width="35">
                     </div>
                     <div style="float: left;width: 200px;padding-left: 5px;">
-                            <p>
-                                <span style="color: #292f33; font-weight:bold">Marvel Entertainment</span></br>
-                            </p>
-                            <p style="line-height: 0px;">
-                                <span style="color:#8899a6;">西南民族大学</span>
-                            </p>
+                        <p>
+                            <span style="color: #292f33; font-weight:bold">Marvel Entertainment</span></br>
+                        </p>
+                        <p style="line-height: 0px;">
+                            <span style="color:#8899a6;">西南民族大学</span>
+                        </p>
                     </div>
                     <div style="float: right;width: 80px;font-size: 13px;color:#8899a6; text-align:right">
                         <p data-toggle="tooltip" data-placement="top" title="2013年9月12日 12:56">120小时前</p>
@@ -286,21 +287,13 @@
 </div>
 
 
-</body>
 
 <script type="text/javascript" >
     $("[data-toggle='tooltip']").tooltip();
     $('*').darkTooltip({
-
     });
-    /*$('#def-html1').darkTooltip({
-
-    });*/
 
     (function( $ ) {
-       /* var tooltip = $('<div>This will be the tooltip text. It even has an onclick event!</div>');
-        $('#abcd').data('powertip', tooltip);
-        console.log($('#abcd').data('powertip'));*/
         var $container = $('.masonry-container');
         $container.imagesLoaded( function () {
             $container.masonry({
@@ -308,14 +301,11 @@
                 itemSelector: '.item'
             });
         });
-        //$('#abcd').tooltip();
 
         //Reinitialize masonry inside each panel after the relative tab link is clicked -
         $('a[data-toggle=tab]').each(function () {
             var $this = $(this);
-
             $this.on('shown.bs.tab', function () {
-
                 $container.imagesLoaded( function () {
                     $container.masonry({
                         columnWidth: '.item',
