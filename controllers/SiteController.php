@@ -12,6 +12,8 @@ use app\models\ContactForm;
 use yii\base\action;
 use yii\di\ServiceLocator;
 use yii\caching\FileCache;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 
 class SiteController extends Controller
 {
@@ -93,5 +95,20 @@ class SiteController extends Controller
         }else{
             return $this->render('entry', ['model' => $model]);
         }
+    }
+
+    public function actionUpload()
+    {
+        $model = new UploadForm();
+
+        if (Yii::$app->request->isPost) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->upload()) {
+                // 文件上传成功
+                return;
+            }
+        }
+
+        return $this->render('upload', ['model' => $model]);
     }
 }
