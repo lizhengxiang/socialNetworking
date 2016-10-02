@@ -3,6 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>G7love</title>
+    <!--vue.js-->
+    <script type="text/javascript" src="/public/js/vue/vue.js"></script>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="/public/js/bootstrap/css/bootstrap.min.css">
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
@@ -17,10 +19,7 @@
     <!--弹出框 -->
     <link rel="stylesheet" type="text/css" href="/public/js/darktooltip/darktooltip.css">
     <script type="text/javascript" src="/public/js/darktooltip/jquery.darktooltip.js"></script>
-    <!--vue.js-->
-    <script type="text/javascript" src="/public/js/vue/vue.js"></script>
     <link rel="stylesheet" href="/home/css/home.css">
-
 </head>
 <body>
 <div id="header" class="header">
@@ -61,30 +60,30 @@
 </div>
 
 
-<div id="homedata">
+<div id="homedata" role="content">
     <div class="container" id = "width">
         <div class="row masonry-container">
             <div class="col-md-4 col-sm-6 item">
                 <div class="thumbnail">
-                    <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" alt="">
+                    <img v-bind:src = res.speakImg alt="" v-if="res.speakImg">
                     <div class="caption">
                         <div style="width: auto;height: 35px;">
                             <div style="width: 35px; float: left">
                                 <div id="def-html" class="box" data-tooltip="#html-content">
-                                    <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="35" width="35" id="abcd" data-toggle="tooltip" data-placement="top">
+                                    <img v-bind:src = res.headImg height="35" width="35"  data-toggle="tooltip" data-placement="top" v-if="res.headImg">
                                 </div>
                                 <div id="html-content" style="display:none;">
                                     <div style="width:290px;height: 232px; background: #ffffff;">
                                         <div style="width: 290px;height: 90px;">
-                                            <img src="https://pbs.twimg.com/profile_banners/740219796/1471995452/600x200" width="290px;" height="90px;">
+                                            <img v-bind:src = res.backgroundImg width="290px;" height="90px;" v-show="true">
                                         </div>
                                         <div style="width: 72px;height: 72px;left: 12px;top: 60px;position:absolute;">
-                                            <img src="https://pbs.twimg.com/profile_images/768230710163320837/dF5n16wL_bigger.jpg" width="72px;" height="72px;">
+                                            <img v-bind:src =res.headImg width="72px;" height="72px;" v-if="res.headImg">
                                         </div>
                                         <div style="width: 185px;height: 72px;left: 80px;top: 95px;position:absolute;">
                                             <p>
-                                                <span style="font-size: 16px;color: #292f33;font-weight: 700;">Marvel Entertainment</span></br>
-                                                <span style="font-size: 11px;line-height:15px;color:#8899a6;">西南民族大学</span>
+                                                <span style="font-size: 16px;color: #292f33;font-weight: 700;" v-if="res.nickname">{{res.nickname}}</span></br>
+                                                <span style="font-size: 11px;line-height:15px;color:#8899a6;">{{res.school}}</span>
                                             </p>
                                         </div>
                                         <div style="width: 20px;height: 72px;left: 257px;top: 100px;position:absolute;">
@@ -93,25 +92,25 @@
                                             </button>
                                         </div>
                                         <div style="width:290px;height: 50px;left: 12px;top: 140px;position:absolute;">
-                                            <p style="font-size: 12px;line-height:15px; color: #292f33;">
+                                            <p style="font-size: 12px;line-height:15px; color: #292f33;" v-if="res.signature">
                                                 Where the conversation begins. Follow for breaking news, special reports, RTs of our journalists and more from http://NYTimes.com .
                                             </p>
                                         </div>
 
                                         <div style="width:279px;height: 53px;top: 190px;position:absolute; padding-bottom: 10px;padding-left: 10px;padding-top: 10px;">
                                             <div style="width: 80px;float: left">
-                                                <p style="font-size: 13px;color:#8899a6; text-align:center">
-                                                    动态</br><span style="color:#1b95e0;font-size: 18px">256</span>
+                                                <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="res.dynamic">
+                                                    动态</br><span style="color:#1b95e0;font-size: 18px">{{res.dynamic}}</span>
                                                 </p>
                                             </div>
                                             <div style="width: 80px;float: left">
-                                                <p style="font-size: 13px;color:#8899a6; text-align:center">
-                                                    正在关注</br><span style="color:#1b95e0;font-size: 18px">256</span>
+                                                <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="res.areLookingAt">
+                                                    正在关注</br><span style="color:#1b95e0;font-size: 18px">{{res.areLookingAt}}</span>
                                                 </p>
                                             </div>
                                             <div style="width: 80px;float: left">
-                                                <p style="font-size: 13px;color:#8899a6; text-align:center">
-                                                    关注者</br><span style="color:#1b95e0;font-size: 18px">256</span>
+                                                <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="res.followers">
+                                                    关注者</br><span style="color:#1b95e0;font-size: 18px">{{res.followers}}</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -120,27 +119,23 @@
                             </div>
                             <div style="float: left;width: 200px;padding-left: 5px;">
                                 <div class="box" data-tooltip="#html-content">
-                                    <!--
-                                                                    <p style="color: #292f33; font-weight:bold">Marvel Entertainment</p>
-                                    -->
                                     <p>
-                                        <span style="color: #292f33; font-weight:bold">Marvel Entertainment</span></br>
+                                        <span style="color: #292f33; font-weight:bold" v-if="res.nickname">{{res.nickname}}</span></br>
                                     </p>
                                     <p style="line-height: 0px;">
-                                        <span style="color:#8899a6;">西南民族大学</span>
+                                        <span style="color:#8899a6;" v-if="res.school">{{res.school}}</span>
                                     </p>
                                 </div>
                             </div>
                             <div style="float: right;width: 80px;font-size: 13px;color:#8899a6; text-align:right">
-                                <p id="ab4c" data-toggle="tooltip" data-placement="top" title="2013年9月12日 12:56">120小时前</p>
+                                <p id="ab4c" data-toggle="tooltip" data-placement="top" title="{{res.titleTime}}" v-if="res.time">{{res.time}}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <a  data-toggle="modal" data-target="#myModal" style="text-decoration:none;color: #0f0f0f">
+                                <a  data-toggle="modal" data-target="#myModal" style="text-decoration:none;color: #0f0f0f" v-if="res.content">
                                     <p style="margin-top: 10px; word-wrap:break-word">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.
+                                        {{res.content}}
                                     </p>
                                 </a>
                             </div>
@@ -170,60 +165,6 @@
                     </div>
                 </div>
             </div><!--/.item  -->
-
-            <div class="col-md-4 col-sm-6 item">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div><!--/.item  -->
-
-            <div class="col-md-4 col-sm-6 item">
-                <div class="thumbnail">
-                    <img src="https://pbs.twimg.com/media/CthbTKPWAAAc0T4.jpg" alt="">
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div><!--/.item  -->
-
-            <div class="col-md-4 col-sm-6 item">
-                <div class="thumbnail">
-                    <img src="https://pbs.twimg.com/media/Ctk6ecSXgAARZyG.jpg" alt="">
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div><!--/.item  -->
-
-            <div class="col-md-4 col-sm-6 item">
-                <div class="thumbnail">
-                    <img src="https://pbs.twimg.com/media/Ctg-8oyUIAEnEV0.jpg" alt="">
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div><!--/.item  -->
-
-            <div class="col-md-4 col-sm-6 item">
-                <div class="thumbnail">
-                    <img src="https://pbs.twimg.com/media/Ctju68XWEAAVtQ0.jpg" alt="">
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div>
-
         </div> <!--/.masonry-container  -->
     </div>
 </div>
@@ -257,6 +198,7 @@
 </div>
 </body>
 
+<!--
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -266,14 +208,14 @@
             </div>
             <div class="modal-body">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
+                    &lt;!&ndash; Indicators &ndash;&gt;
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     </ol>
 
-                    <!-- Wrapper for slides -->
+                    &lt;!&ndash; Wrapper for slides &ndash;&gt;
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
                             <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" >
@@ -283,7 +225,7 @@
                         </div>
                     </div>
 
-                    <!-- Controls -->
+                    &lt;!&ndash; Controls &ndash;&gt;
                     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>
@@ -344,40 +286,8 @@
         </div>
     </div>
 </div>
+-->
 
 <script type="text/javascript" src="/home/js/index.js"></script>
-
-<!--
-<script type="text/javascript" >
-    $("[data-toggle='tooltip']").tooltip();
-    $('*').darkTooltip({
-    });
-
-    (function( $ ) {
-        var $container = $('.masonry-container');
-        $container.imagesLoaded( function () {
-            $container.masonry({
-                columnWidth: '.item',
-                itemSelector: '.item'
-            });
-        });
-
-        //Reinitialize masonry inside each panel after the relative tab link is clicked -
-        $('a[data-toggle=tab]').each(function () {
-            var $this = $(this);
-            $this.on('shown.bs.tab', function () {
-                $container.imagesLoaded( function () {
-                    $container.masonry({
-                        columnWidth: '.item',
-                        itemSelector: '.item'
-                    });
-                });
-
-            }); //end shown
-        });  //end each
-
-    })(jQuery);
-</script>
--->
 </html>
 
