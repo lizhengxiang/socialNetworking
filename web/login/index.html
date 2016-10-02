@@ -10,6 +10,8 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!--vue.js-->
+    <script type="text/javascript" src="/public/js/vue/vue.js"></script>
 </head>
 <body>
 
@@ -35,168 +37,22 @@
                 <div style="margin-right:80px;float: right"><a style="text-decoration:none" href="/www/login/forgotpassword.html">forgot password</a></div>
             </div>
         </div>
-    </div>
-<div class="row" style="margin: 0px;">
-    <div class="col-xs-8">image</div>
-    <div class="col-xs-4" style="margin-top:90px; margin-right: -90px;">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input  class="form-control" id="inputEmail1" style="width: 300px;" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="inputPassword1" style="width: 300px;" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Check me out
-            </label>
-        </div>
-        <button type="submit" id ="submit" class="btn btn-default">Submit</button>
-        <div style="margin: 40px;">
-            <div style="float: left"><a style="text-decoration:none" href="/www/registered/index.html">registered</a></div>
-            <div style="margin-right:80px;float: right"><a style="text-decoration:none" href="/www/login/forgotpassword.html">forgot password</a></div>
-        </div>
-    </div>
 </div>
-<div class="row" style="margin: 0px;">
-    <div class="col-xs-8">image</div>
-    <div class="col-xs-4" style="margin-top:90px; margin-right: -90px;">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input  class="form-control" id="inputEmail1" style="width: 300px;" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="inputPassword1" style="width: 300px;" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Check me out
-            </label>
-        </div>
-        <button type="submit" id ="submit" class="btn btn-default">Submit</button>
-        <div style="margin: 40px;">
-            <div style="float: left"><a style="text-decoration:none" href="/www/registered/index.html">registered</a></div>
-            <div style="margin-right:80px;float: right"><a style="text-decoration:none" href="/www/login/forgotpassword.html">forgot password</a></div>
-        </div>
-    </div>
+
+<div id="app" role="content">
+    <ul>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ul>
 </div>
-<div class="row" style="margin: 0px;">
-    <div class="col-xs-8">image</div>
-    <div class="col-xs-4" style="margin-top:90px; margin-right: -90px;">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input  class="form-control" id="inputEmail1" style="width: 300px;" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="inputPassword1" style="width: 300px;" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Check me out
-            </label>
-        </div>
-        <button type="submit" id ="submit" class="btn btn-default">Submit</button>
-        <div style="margin: 40px;">
-            <div style="float: left"><a style="text-decoration:none" href="/www/registered/index.html">registered</a></div>
-            <div style="margin-right:80px;float: right"><a style="text-decoration:none" href="/www/login/forgotpassword.html">forgot password</a></div>
-        </div>
-    </div>
-</div>
-<div class="row" style="margin: 0px;">
-    <div class="col-xs-8">image</div>
-    <div class="col-xs-4" style="margin-top:90px; margin-right: -90px;">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input  class="form-control" id="inputEmail1" style="width: 300px;" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="inputPassword1" style="width: 300px;" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Check me out
-            </label>
-        </div>
-        <button type="submit" id ="submit" class="btn btn-default">Submit</button>
-        <div style="margin: 40px;">
-            <div style="float: left"><a style="text-decoration:none" href="/www/registered/index.html">registered</a></div>
-            <div style="margin-right:80px;float: right"><a style="text-decoration:none" href="/www/login/forgotpassword.html">forgot password</a></div>
-        </div>
-    </div>
-</div>
-<div class="row" style="margin: 0px;">
-    <div class="col-xs-8">image</div>
-    <div class="col-xs-4" style="margin-top:90px; margin-right: -90px;">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input  class="form-control" id="inputEmail1" style="width: 300px;" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="inputPassword1" style="width: 300px;" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Check me out
-            </label>
-        </div>
-        <button type="submit" id ="submit" class="btn btn-default">Submit</button>
-        <div style="margin: 40px;">
-            <div style="float: left"><a style="text-decoration:none" href="/www/registered/index.html">registered</a></div>
-            <div style="margin-right:80px;float: right"><a style="text-decoration:none" href="/www/login/forgotpassword.html">forgot password</a></div>
-        </div>
-    </div>
-</div>
-<div class="row" style="margin: 0px;">
-    <div class="col-xs-8">image</div>
-    <div class="col-xs-4" style="margin-top:90px; margin-right: -90px;">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input  class="form-control" id="inputEmail1" style="width: 300px;" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="inputPassword1" style="width: 300px;" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Check me out
-            </label>
-        </div>
-        <button type="submit" id ="submit" class="btn btn-default">Submit</button>
-        <div style="margin: 40px;">
-            <div style="float: left"><a style="text-decoration:none" href="/www/registered/index.html">registered</a></div>
-            <div style="margin-right:80px;float: right"><a style="text-decoration:none" href="/www/login/forgotpassword.html">forgot password</a></div>
-        </div>
-    </div>
-</div>
-<div class="row" style="margin: 0px;">
-    <div class="col-xs-8">image</div>
-    <div class="col-xs-4" style="margin-top:90px; margin-right: -90px;">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input  class="form-control" id="inputEmail1" style="width: 300px;" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="inputPassword1" style="width: 300px;" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Check me out
-            </label>
-        </div>
-        <button type="submit" id ="submit" class="btn btn-default">Submit</button>
-        <div style="margin: 40px;">
-            <div style="float: left"><a style="text-decoration:none" href="/www/registered/index.html">registered</a></div>
-            <div style="margin-right:80px;float: right"><a style="text-decoration:none" href="/www/login/forgotpassword.html">forgot password</a></div>
-        </div>
-    </div>
-</div>
+<!--
+<ul id="example-2" role="content">
+    <li v-for="item in items">
+        {{ parentMessage }} - {{ $index }} - {{ item.message }}
+    </li>
+</ul>-->
+
 
 </body>
 <script type="text/javascript" src="/www/themes/login_index.js"></script>

@@ -25,3 +25,28 @@ $("#submit").click( function () {
         alert(resultData);
     });
 });
+
+$(document).ready(function() {
+
+   /* var example2 = new Vue({
+        el: '#example-2',
+        data: {
+            parentMessage: 'Parent',
+            items: [
+                {message: 'Foo'},
+                {message: 'Bar'}
+            ]
+        }
+    });*/
+
+    new Vue({
+        el: '#app',
+        data: {
+            todos: [
+                {text: 'Learn JavaScript'},
+                {text: 'Learn Vue.js'},
+                {text: 'Build Something Awesome'}
+            ]
+        }
+    })
+})
