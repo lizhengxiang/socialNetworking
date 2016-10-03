@@ -11,7 +11,7 @@ li{
     width:100%;
     height: 65px;
     width:expression_r(document.body.clientWidth <= 1349? "1349px": "auto");
-    background-color: #27303F;
+    background-color: #55acee;
 }
 .header .head_center{
     width:1200px;
@@ -39,7 +39,7 @@ li{
 }
 .head_center .head_nav ul{
     margin-left:20px;
-    width:600px;
+    width:720px;
     height:65px;
 }
 .head_center .head_nav ul li{
