@@ -35,6 +35,7 @@ class Tools
 
         /*
          * 这里需要处理该用户有没有登陆判断有没有对动态操作AND动态发表离当前时间
+         * @todo 计算时间有可能会耗时，带观察看看会不会影响速度
          */
         if(!empty(Yii::$app->user->getId())){
             $len = sizeof($result);
@@ -50,11 +51,84 @@ class Tools
                     $result[$i]['reportNum'] = $row['reportNum'];
                     $result[$i]['praise'] = $row['praise'];
                     $result[$i]['forwardingNum'] = $row['forwardingNum'];
+                    $startdate=strtotime($result[$i]['createtime']);
+                    $enddate=time();
+                    $timediff = $enddate-$startdate;
+                    $days = intval($timediff/86400);
+                    if($days>0){
+                        $result[$i]['time'] = $days.'天前';
+                    }else{
+                        $remain = $timediff%86400;
+                        $hours = intval($remain/3600);
+                        if($hours>0){
+                            $result[$i]['time'] = $hours.'小时前';
+                        }else{
+                            $remain = $remain%3600;
+                            $mins = intval($remain/60);
+                            if($mins>0){
+                                $result[$i]['time'] = $mins.'分钟前';
+                            }else{
+                                $secs = $remain%60;
+                                $result[$i]['time'] = $mins.'秒钟前';
+                            }
+                        }
+                    }
                 }else{
+                    $startdate=strtotime($result[$i]['createtime']);
+                    $enddate=time();
+                    $timediff = $enddate-$startdate;
+                    $days = intval($timediff/86400);
+                    if($days>0){
+                        $result[$i]['time'] = $days.'天前';
+                    }else{
+                        $remain = $timediff%86400;
+                        $hours = intval($remain/3600);
+                        if($hours>0){
+                            $result[$i]['time'] = $hours.'小时前';
+                        }else{
+                            $remain = $remain%3600;
+                            $mins = intval($remain/60);
+                            if($mins>0){
+                                $result[$i]['time'] = $mins.'分钟前';
+                            }else{
+                                $secs = $remain%60;
+                                $result[$i]['time'] = $mins.'秒钟前';
+                            }
+                        }
+                    }
                     $result[$i]['reportNum'] =0;
                     $result[$i]['praise'] = 0;
                     $result[$i]['forwardingNum'] =0;
                 }
+            }
+        }else{
+            $len = sizeof($result);
+            for ($i=0; $i<$len; $i++){
+                $startdate=strtotime($result[$i]['createtime']);
+                $enddate=time();
+                $timediff = $enddate-$startdate;
+                $days = intval($timediff/86400);
+                if($days>0){
+                    $result[$i]['time'] = $days.'天前';
+                }else{
+                    $remain = $timediff%86400;
+                    $hours = intval($remain/3600);
+                    if($hours>0){
+                        $result[$i]['time'] = $hours.'小时前';
+                    }else{
+                        $remain = $remain%3600;
+                        $mins = intval($remain/60);
+                        if($mins>0){
+                            $result[$i]['time'] = $mins.'分钟前';
+                        }else{
+                            $secs = $remain%60;
+                            $result[$i]['time'] = $mins.'秒钟前';
+                        }
+                    }
+                }
+                $result[$i]['reportNum'] =0;
+                $result[$i]['praise'] = 0;
+                $result[$i]['forwardingNum'] =0;
             }
         }
         return $result;

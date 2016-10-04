@@ -52,7 +52,7 @@ $(document).ready(function(){
                                 dynamic:50,
                                 areLookingAt:200,
                                 followers:10,
-                                time:"120小时前",
+                                time:resultData[i].time,
                                 titleTime:resultData[i].createtime,
                                 content:resultData[i].content,
                                 like:resultData[i].praise,
