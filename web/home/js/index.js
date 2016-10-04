@@ -39,7 +39,7 @@ $(document).ready(function(){
             getData: function() {
                 for(var i=0;i<3;i++){
                 this.items.push({
-                    speakImg: "http://b256.photo.store.qq.com/psb?/V13g2Aub1KNBqO/Soj2Pq7Mvaj6NFBg6bfECtx6MvqgFKeynE2ITu6emRQ!/b/dEEpmJhwJQAA&bo=IAMUAgAAAAABBxU!&rf=viewer_4",
+                    speakImg: "https://pbs.twimg.com/media/CtiQsllXEAARtMC.jpg:thumb",
                     speakImg1:"https://pbs.twimg.com/media/CthbTKPWAAAc0T4.jpg",
                     speakImg3: "https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg",
                     headImg:"https://pbs.twimg.com/profile_images/768230710163320837/dF5n16wL_bigger.jpg",
