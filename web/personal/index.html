@@ -16,8 +16,9 @@
     <script src="/public/js/dist/jquery.cropit.js"></script>
     <!--弹出框 -->
     <link rel="stylesheet" type="text/css" href="/public/js/darktooltip/darktooltip.css">
-    <script type="text/javascript" src="/public/js/darktooltip/jquery.darktooltip.js"></script>
+    <script  src="/public/js/darktooltip/jquery.darktooltip.js"></script>
     <link rel="stylesheet" href="/home/css/home.css">
+    <script src="/public/js/load/load.js"></script>
 </head>
 <div id="homedata" >
 <body>
@@ -113,7 +114,7 @@
     </div><!--个人信息-->
     <div  class="row" style="margin-top: 480px;margin-left: 260px;">
         <div class="col-md-7">
-            <template v-for="res in items">
+            <template v-for="res in items" track-by="$index">
                 <div class="row masonry-container">
                 <div class="col-md-12 col-sm-12 item">
                     <div class="thumbnail">

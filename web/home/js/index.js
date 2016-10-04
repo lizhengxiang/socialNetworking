@@ -9,6 +9,7 @@ Vue.filter('numeric', {
 
 $(document).ready(function(){
     //绑定数据
+    Vue.config.async = false;
     var homedata = new Vue({
         el: '#homedata',
         data: {
@@ -37,46 +38,43 @@ $(document).ready(function(){
         },
         methods: {
             getData: function() {
-                for(var i=0;i<3;i++){
-                this.items.push({
-                    speakImg: "https://pbs.twimg.com/media/CtiQsllXEAARtMC.jpg:thumb",
-                    speakImg1:"https://pbs.twimg.com/media/CthbTKPWAAAc0T4.jpg",
-                    speakImg3: "https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg",
-                    headImg:"https://pbs.twimg.com/profile_images/768230710163320837/dF5n16wL_bigger.jpg",
-                    nickname:"Marvel Entertainment",
-                    backgroundImg:"https://pbs.twimg.com/profile_banners/740219796/1471995452/600x200",
-                    school:"西南民族大学",
-                    signature:"Where the conversation begins. Follow for breaking news, special reports, RTs of our journalists and more from http://NYTimes.com .",
-                    dynamic:50,
-                    areLookingAt:200,
-                    followers:10,
-                    time:"120小时前",
-                    titleTime:"2013年9月12日 12:56",
-                    content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.",
-                    like:1,
-                    forwarding:20,
-                    forwardingNum:15
+                var self = this;
+                load('personal', 'dynamic', {}, function(resultData) {
+                    var len = resultData.length;
+                    if(len >= 1){
+                        for(var i=0;i<len;i++){
+                            self.items.push({
+                                speakImg: resultData[i].pic1,
+                                speakImg1:resultData[i].pic2,
+                                speakImg3: resultData[i].pic4,
+                                headImg:resultData[i].headPortrait,
+                                nickname:resultData[i].nickname,
+                                backgroundImg:resultData[i].backgroundImage,
+                                school:resultData[0].school,
+                                signature:"ssss",
+                                dynamic:50,
+                                areLookingAt:200,
+                                followers:10,
+                                time:"120小时前",
+                                titleTime:"2016-10-04 15:22:32",
+                                content:resultData[0].content,
+                                like:1,
+                                forwarding:20,
+                                forwardingNum:15
+                            });
+                        }
+                        //我也不知道为什么要放在在这里
+                        $('*').darkTooltip({
+
+                        });
+                        $("[data-toggle='tooltip']").tooltip();
+                    }else {
+                        layer.msg('获取数据失败', {
+                            offset: 0,
+                            shift: 12
+                        });
+                    }
                 });
-                this.items.push({
-                    speakImg: "https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg",
-                    speakImg1:"https://pbs.twimg.com/media/CthbTKPWAAAc0T4.jpg",
-                    speakImg3: "https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg",
-                    headImg:"https://pbs.twimg.com/profile_images/768230710163320837/dF5n16wL_bigger.jpg",
-                    nickname:"Marvel Entertainment",
-                    backgroundImg:"https://pbs.twimg.com/profile_banners/740219796/1471995452/600x200",
-                    school:"西南",
-                    signature:"Where the conversation begins. Follow for breaking news, special reports, RTs of our journalists and more from http://NYTimes.com .",
-                    dynamic:50,
-                    areLookingAt:200,
-                    followers:10,
-                    time:"12小时前",
-                    titleTime:"2013年9月12日 12:56",
-                    content:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.",
-                    like:1,
-                    forwarding:20,
-                    forwardingNum:15
-                });
-                }
             },
             personalInformation: function (){
                 this.information.speakImg = arguments[0];
@@ -102,20 +100,6 @@ $(document).ready(function(){
 
     });
     $("[data-toggle='tooltip']").tooltip();
-
-    /*homedata.$watch('status', function(val) {
-        initDatepicker()
-    })
-    function initDatepicker() {
-        if ($('.datepicker')) {
-            $('.datepicker').datepicker({
-                language: 'zh-CN',
-                autoclose: true,
-                format: "yyyy-mm-dd"
-            });
-        }
-    }*/
-
 
     //用于处理图片流
     var $container = $('.masonry-container');

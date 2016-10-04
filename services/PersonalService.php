@@ -9,7 +9,6 @@ class PersonalService
 {
     private $tools;
 
-
     /**
      * 获取自己发表的动态
      */
@@ -17,6 +16,8 @@ class PersonalService
     {
         $this->tools = new Tools();
         return $this->tools->searchDynamic($args);
+        
+        
 
     }
     

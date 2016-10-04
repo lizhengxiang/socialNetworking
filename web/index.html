@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="/public/js/darktooltip/darktooltip.css">
     <script type="text/javascript" src="/public/js/darktooltip/jquery.darktooltip.js"></script>
     <link rel="stylesheet" href="/home/css/home.css">
+    <script src="/public/js/load/load.js"></script>
 </head>
 <div id="homedata" role="content">
 <body>
@@ -65,7 +66,7 @@
 
 <div class="container" id = "width" style="margin-top: 73px;">
     <div class="row masonry-container">
-        <template v-for="res in items">
+        <template v-for="res in items" track-by="$index">
             <div class="col-md-4 col-sm-6 item">
                 <div class="thumbnail">
                     <img v-bind:src = res.speakImg alt="" v-if="res.speakImg">

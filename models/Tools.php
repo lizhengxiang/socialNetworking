@@ -20,10 +20,44 @@ class Tools
         unset($args['pageNo']);
         unset($args['pageSize']);
         $userid = isset($args['userid'])?explode(',',$args['userid']):Yii::$app->user->getId();
+        $rows = (new \yii\db\Query())
+            ->select(['dynamic.id','dynamic.userid','content',
+                'pic1','pic2','pic3','pic4','dynamic.createtime','praise','forwardingNum','reportNum','registered.headPortrait','registered.backgroundImage',
+                'registered.motto','registered.nickname','registered.birthday','registered.gender','school.name as school'])
+            ->from('dynamic')
+            ->join('LEFT JOIN', 'registered', 'registered.userid = dynamic.userid')
+            ->join('LEFT JOIN', 'school', 'registered.school = school.id');
+        $rows->where('dynamic.deleted=0');
+        if(isset($userid)){
+            $rows->andWhere(['dynamic.userid'=>$userid]);
+        }
+        $result = $rows ->offset($offset-1)->limit($limit)->all();
 
-        return $userid;
-
-
+        /*
+         * 这里需要处理该用户有没有登陆判断有没有对动态操作AND动态发表离当前时间
+         */
+        if(!empty(Yii::$app->user->getId())){
+            $len = sizeof($result);
+            $user = Yii::$app->user->getId();
+            for ($i=0; $i<$len; $i++){
+                $dynamicId = $result[$i]['id'];
+                $row = (new \yii\db\Query())
+                    ->select(['reportNum', 'praise','forwardingNum'])
+                    ->from('dynamiclog')
+                    ->where(['userid' => $user,'dynamicId'=>$dynamicId])
+                    ->one();
+                if(!empty($row)){
+                    $result[$i]['reportNum'] = $row['reportNum'];
+                    $result[$i]['praise'] = $row['praise'];
+                    $result[$i]['forwardingNum'] = $row['forwardingNum'];
+                }else{
+                    $result[$i]['reportNum'] =0;
+                    $result[$i]['praise'] = 0;
+                    $result[$i]['forwardingNum'] =0;
+                }
+            }
+        }
+        return $result;
     }
 
 }
