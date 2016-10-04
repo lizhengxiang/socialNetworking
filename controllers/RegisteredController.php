@@ -15,7 +15,7 @@ class RegisteredController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['login', 'logout', 'signup','provinces'],
+                'only' => ['login', 'logout', 'signup'],
                 'rules' => [
                     [
                         'allow' => true,
@@ -37,7 +37,6 @@ class RegisteredController extends Controller
 
     public function init()
     {
-        $this->behaviors();
         $this->service = new RegisteredService();
     }
 
@@ -79,7 +78,6 @@ class RegisteredController extends Controller
         $data = $this->service->searchProvinces($request);
         $data = json_encode($data);
         return $data;
-
     }
 
     /*

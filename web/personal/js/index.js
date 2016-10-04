@@ -37,7 +37,7 @@ var homedata = new Vue({
         getData: function() {
             for(var i=0;i<3;i++){
                 this.items.push({
-                    speakImg: "http://b256.photo.store.qq.com/psb?/V13g2Aub1KNBqO/Soj2Pq7Mvaj6NFBg6bfECtx6MvqgFKeynE2ITu6emRQ!/b/dEEpmJhwJQAA&bo=IAMUAgAAAAABBxU!&rf=viewer_4",
+                    speakImg: "https://pbs.twimg.com/media/CtiQsllXEAARtMC.jpg:thumb",
                     speakImg1:"https://pbs.twimg.com/media/CthbTKPWAAAc0T4.jpg",
                     speakImg3: "https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg",
                     headImg:"https://pbs.twimg.com/profile_images/768230710163320837/dF5n16wL_bigger.jpg",
@@ -104,40 +104,6 @@ $(document).ready(function(){
 
     });
     $("[data-toggle='tooltip']").tooltip();
-
-    /*homedata.$watch('status', function(val) {
-     initDatepicker()
-     })
-     function initDatepicker() {
-     if ($('.datepicker')) {
-     $('.datepicker').datepicker({
-     language: 'zh-CN',
-     autoclose: true,
-     format: "yyyy-mm-dd"
-     });
-     }
-     }*/
-
-
-    //用于处理图片流
-    var $container = $('.masonry-container');
-    $container.imagesLoaded( function () {
-        $container.masonry({
-            columnWidth: '.item',
-            itemSelector: '.item'
-        });
-    });
-    //Reinitialize masonry inside each panel after the relative tab link is clicked -
-    $('a[data-toggle=tab]').each(function () {
-        var $this = $(this);
-        $this.on('shown.bs.tab', function () {
-            $container.imagesLoaded( function () {
-                $container.masonry({
-                    columnWidth: '.item',
-                    itemSelector: '.item'
-                });
-            });
-
-        }); //end shown
-    });  //end each
+    
+    
 })

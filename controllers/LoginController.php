@@ -21,7 +21,6 @@ class LoginController extends Controller
 
     public function actionIndex()
     {
-	$test=111;
         return $this->render('index');
     }
 
