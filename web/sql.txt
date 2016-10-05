@@ -1,0 +1,62 @@
+CREATE TABLE `dynamic` (
+  `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '动态id',
+  `userid` int(10) NOT NULL COMMENT '用户id',
+  `content` varchar(600) NOT NULL DEFAULT '' COMMENT '动态内容',
+  `pic1` char(36) NOT NULL DEFAULT '' COMMENT '图片1',
+  `pic2` char(36) NOT NULL DEFAULT '' COMMENT '图片2',
+  `pic3` char(36) NOT NULL DEFAULT '' COMMENT '图片3',
+  `pic4` char(36) NOT NULL DEFAULT '' COMMENT '图片4',
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '删除标记: 0,未删除 1,已删除',
+  `reportNum` int(2) DEFAULT '0' COMMENT '举报次数',
+  `praise` int(2) DEFAULT '0' COMMENT '点赞次数',
+  `forwardingNum` int(2) DEFAULT '0' COMMENT '转发次数',
+  PRIMARY KEY (`id`),
+  KEY `userid` (`userid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='发表动态表';
+
+
+CREATE TABLE `dynamiclog` (
+  `id` int(8) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `dynamicId` int(7) NOT NULL COMMENT '内容id',
+  `userid` int(10) NOT NULL COMMENT '用户id',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '删除标记: 0,未删除 1,已删除',
+  `reportNum` int(2) DEFAULT '0' COMMENT '举报次数',
+  `praise` int(2) DEFAULT '0' COMMENT '点赞次数',
+  `forwardingNum` int(2) DEFAULT '0' COMMENT '转发次数',
+  PRIMARY KEY (`dynamicId`,`userid`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='点赞，转发，举报日志记录表';
+
+CREATE TABLE `registered` (
+  `id` int(8) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `userid` int(10) NOT NULL COMMENT '用户id',
+  `nickname` char(36) NOT NULL DEFAULT '' COMMENT '昵称',
+  `email` char(36) NOT NULL COMMENT '邮箱',
+  `password` char(36) NOT NULL DEFAULT '0' COMMENT '密码',
+  `provinces` int(2) NOT NULL COMMENT '省份',
+  `school` int(4) NOT NULL COMMENT '学校',
+  `birthday` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '生日',
+  `gender` tinyint(1) NOT NULL DEFAULT '0' COMMENT '性别: 0,男 1,女',
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '删除标记: 0,未删除 1,已删除',
+  `motto` char(150) DEFAULT '' COMMENT '个性签名',
+  `headPortrait` char(150) DEFAULT '/uploads/dF5n16wL_bigger.jpg' COMMENT '头像',
+  `backgroundImage` char(150) DEFAULT '/uploads/600x200.jpg' COMMENT '背景条',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userid` (`userid`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COMMENT='注册表';
+
+
+CREATE TABLE `school` (
+  `id` int(3) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `name` char(36) NOT NULL DEFAULT '' COMMENT '省份学校专业',
+  `parentid` int(20) NOT NULL COMMENT '父id',
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '删除标记: 0,未删除 1,已删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='各省份的学校';
