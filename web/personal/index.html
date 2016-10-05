@@ -276,14 +276,12 @@
                     </div>
                     <div class="guli">
                         <div class="encourage"><span class="glyphicon glyphicon-thumbs-up"></span></div>
-                        <p>已有<span class="guli_num">296</span>人点赞</p>
+                        <p style="margin-left: 18px;">已有<span class="guli_num">296</span>人点赞</p>
                     </div>
                 </div><!--center_top结束-->
             </div>
         </div>
     </div><!--动态-->
-
-
 </div>
 </body>
 
@@ -295,6 +293,29 @@
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
+                <div style="width: auto;height: 35px; ">
+                    <div style="width: 35px; float: left">
+                        <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="35" width="35">
+                    </div>
+                    <div style="float: left;width: 200px;padding-left: 5px;">
+                        <p>
+                            <span style="color: #292f33; font-weight:bold">{{information.nickname}}</span></br>
+                        </p>
+                        <p style="line-height: 0px;">
+                            <span style="color:#8899a6;">{{information.school}}</span>
+                        </p>
+                    </div>
+                    <div style="float: right;width: 80px;font-size: 13px;color:#8899a6; text-align:right">
+                        <button type="button" class="btn btn-primary">正在关注</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <p style="margin-top: 10px; word-wrap:break-word;font-size: 20px;font-weight: 300">
+                            {{information.content}}
+                        </p>
+                    </div>
+                </div>
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -307,16 +328,16 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active" v-if="information.speakImg">
-                            <img v-bind:src = information.speakImg alt="">
+                            <img v-bind:src = information.speakImg alt="" width="100%">
                         </div>
                         <div class="item" v-if="information.speakImg1">
-                            <img v-bind:src = information.speakImg1 alt="" >
+                            <img v-bind:src = information.speakImg1 alt="" width="100%">
                         </div>
                         <div class="item" v-if="information.speakImg2">
-                            <img v-bind:src = information.speakImg2 alt="">
+                            <img v-bind:src = information.speakImg2 alt="" width="100%">
                         </div>
                         <div class="item" v-if="information.speakImg3">
-                            <img v-bind:src = information.speakImg3 alt="">
+                            <img v-bind:src = information.speakImg3 alt="" width="100%">
                         </div>
                     </div>
 
@@ -330,30 +351,7 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <div style="width: auto;height: 35px; padding-top: 20px;">
-                    <div style="width: 35px; float: left">
-                        <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="35" width="35">
-                    </div>
-                    <div style="float: left;width: 200px;padding-left: 5px;">
-                        <p>
-                            <span style="color: #292f33; font-weight:bold">{{information.nickname}}</span></br>
-                        </p>
-                        <p style="line-height: 0px;">
-                            <span style="color:#8899a6;">{{information.school}}</span>
-                        </p>
-                    </div>
-                    <div style="float: right;width: 80px;font-size: 13px;color:#8899a6; text-align:right">
-                        <p>{{information.time}}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <p style="margin-top: 10px; word-wrap:break-word">
-                            {{information.content}}
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
+                <div class="row" style="margin-top: 7px;">
                     <div class="col-md-3 col-sm-6">
                         <p data-toggle="tooltip" data-placement="top" title="喜欢" style="text-align:center">
                             <span v-if="information.like"><span class="glyphicon glyphicon-heart" style="color: #ff0000;"></span><span style="padding-left: 6px;">{{information.likeNum?information.likeNum:0}}</span></span>

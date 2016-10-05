@@ -50,17 +50,17 @@ $(document).ready(function(){
                                 headImg:resultData[i].headPortrait,
                                 nickname:resultData[i].nickname,
                                 backgroundImg:resultData[i].backgroundImage,
-                                school:resultData[0].school,
-                                signature:"ssss",
+                                school:resultData[i].school,
+                                signature:resultData[i].motto,
                                 dynamic:50,
                                 areLookingAt:200,
                                 followers:10,
-                                time:"120小时前",
-                                titleTime:"2016-10-04 15:22:32",
-                                content:resultData[0].content,
-                                like:1,
-                                forwarding:20,
-                                forwardingNum:15
+                                time:resultData[i].time,
+                                titleTime:resultData[i].createtime,
+                                content:resultData[i].content,
+                                like:resultData[i].praise,
+                                forwarding:resultData[i].forwarding,
+                                forwardingNum:resultData[i].forwardingNum
                             });
                         }
                         //我也不知道为什么要放在在这里

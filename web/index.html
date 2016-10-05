@@ -225,16 +225,16 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active" v-if="information.speakImg">
-                            <img v-bind:src = information.speakImg alt="" >
+                            <img v-bind:src = information.speakImg alt="" width="100%">
                         </div>
                         <div class="item" v-if="information.speakImg1">
-                            <img v-bind:src = information.speakImg1 alt="" >
+                            <img v-bind:src = information.speakImg1 alt="" width="100%">
                         </div>
                         <div class="item" v-if="information.speakImg2">
-                            <img v-bind:src = information.speakImg2 alt="">
+                            <img v-bind:src = information.speakImg2 alt="" width="100%">
                         </div>
                         <div class="item" v-if="information.speakImg3">
-                            <img v-bind:src = information.speakImg3 alt="">
+                            <img v-bind:src = information.speakImg3 alt="" width="100%">
                         </div>
                     </div>
 
@@ -261,12 +261,12 @@
                         </p>
                     </div>
                     <div style="float: right;width: 80px;font-size: 13px;color:#8899a6; text-align:right">
-                        <p data-toggle="tooltip" data-placement="top" title="{{information.titleTime}}">{{information.time}}</p>
+                        <p>{{information.time}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <p style="margin-top: 10px; word-wrap:break-word">
+                        <p style="margin-top: 10px; word-wrap:break-word; font-size: 20px;font-weight: 300">
                             {{information.content}}
                         </p>
                     </div>
