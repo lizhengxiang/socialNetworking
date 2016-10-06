@@ -37,9 +37,9 @@ class Tools
          * 这里需要处理该用户有没有登陆判断有没有对动态操作AND动态发表离当前时间
          * @todo 计算时间有可能会耗时，带观察看看会不会影响速度
          */
-        if(!empty(Yii::$app->user->getId())){
+        $user = '1609000115';// Yii::$app->user->getId();
+        if(!empty($user)){
             $len = sizeof($result);
-            $user = Yii::$app->user->getId();
             for ($i=0; $i<$len; $i++){
                 $dynamicId = $result[$i]['id'];
                 $row = (new \yii\db\Query())
@@ -48,9 +48,9 @@ class Tools
                     ->where(['userid' => $user,'dynamicId'=>$dynamicId])
                     ->one();
                 if(!empty($row)){
-                    $result[$i]['reportNum'] = $row['reportNum'];
-                    $result[$i]['praise'] = $row['praise'];
-                    $result[$i]['forwardingNum'] = $row['forwardingNum'];
+                    $result[$i]['reportNumTag'] = $row['reportNum'];
+                    $result[$i]['praiseTag'] = $row['praise'];
+                    $result[$i]['forwardingNumTag'] = $row['forwardingNum'];
                     $startdate=strtotime($result[$i]['createtime']);
                     $enddate=time();
                     $timediff = $enddate-$startdate;
@@ -96,9 +96,9 @@ class Tools
                             }
                         }
                     }
-                    $result[$i]['reportNum'] =0;
-                    $result[$i]['praise'] = 0;
-                    $result[$i]['forwardingNum'] =0;
+                    $result[$i]['reportNumTag'] =0;
+                    $result[$i]['praiseTag'] = 0;
+                    $result[$i]['forwardingNumTag'] =0;
                 }
             }
         }else{
@@ -126,9 +126,9 @@ class Tools
                         }
                     }
                 }
-                $result[$i]['reportNum'] =0;
-                $result[$i]['praise'] = 0;
-                $result[$i]['forwardingNum'] =0;
+                $result[$i]['reportNumTag'] =0;
+                $result[$i]['praiseTag'] = 0;
+                $result[$i]['forwardingNumTag'] =0;
             }
         }
         return $result;

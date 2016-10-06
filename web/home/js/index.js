@@ -28,7 +28,10 @@ $(document).ready(function(){
                 content:'',
                 likeNum:'',
                 forwardingNum:'',
-                reportNum:''
+                reportNum:'',
+                reportNumTag:'',
+                praiseTag:'',
+                forwardingNumTag:''
             },
         },
         created: function() {
@@ -58,9 +61,12 @@ $(document).ready(function(){
                                 time:resultData[i].time,
                                 titleTime:resultData[i].createtime,
                                 content:resultData[i].content,
-                                like:resultData[i].praise,
-                                forwarding:resultData[i].forwarding,
-                                forwardingNum:resultData[i].forwardingNum
+                                likeNum:resultData[i].praise,
+                                reportNum:resultData[i].reportNum,
+                                forwardingNum:resultData[i].forwardingNum,
+                                reportNumTag:resultData[i].reportNumTag,
+                                praiseTag:resultData[i].praiseTag,
+                                forwardingNumTag:resultData[i].forwardingNumTag
                             });
                         }
                         //我也不知道为什么要放在在这里
@@ -76,19 +82,22 @@ $(document).ready(function(){
                     }
                 });
             },
-            personalInformation: function (){
-                this.information.speakImg = arguments[0];
-                this.information.speakImg1 = arguments[1];
-                this.information.speakImg2 = arguments[2];
-                this.information.speakImg3 = arguments[3];
-                this.information.nickname = arguments[4];
-                this.information.school = arguments[5];
-                this.information.titleTime = arguments[6];
-                this.information.time = arguments[7];
-                this.information.content = arguments[8];
-                this.information.likeNum = arguments[9];
-                this.information.forwardingNum = arguments[10];
-                this.information.reportNum = arguments[11];
+            personalInformation: function (tag){
+                this.information.speakImg = tag.speakImg;
+                this.information.speakImg1 = tag.speakImg1;
+                this.information.speakImg2 = tag.speakImg2;
+                this.information.speakImg3 = tag.speakImg3;
+                this.information.nickname = tag.nickname;
+                this.information.school = tag.script;
+                this.information.titleTime = tag.titleTime;
+                this.information.time = tag.time;
+                this.information.content = tag.content;
+                this.information.likeNum = tag.likeNum;
+                this.information.forwardingNum = tag.forwardingNum;
+                this.information.reportNum = tag.reportNum;
+                this.information.reportNumTag=tag.reportNumTag;
+                this.information.praiseTag=tag.praiseTag;
+                this.information.forwardingNumTag=tag.forwardingNumTag;
             },
             say: function (msg) {
                 alert(msg)
