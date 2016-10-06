@@ -1,9 +1,4 @@
 //小提示框
-/*;*/
-
-
-
-
 $(document).ready(function(){
     //绑定数据
     Vue.config.async = false;

@@ -1,48 +1,24 @@
 <?php
-
-namespace app\models;
+namespace app\services;
 use Yii;
+use app\models\Tools;
 use yii\db\ActiveRecord;
-class Tools
+
+/**
+ * @author Bill <lizhengxiang@huoyunren.com>
+ */
+class DynamicService
 {
-    public function tool($args)
-    {
-        return $args = new ActiveRecord;
-    }
-
+    private $tools;
     /*
-     * 计算时间差,返回时间差
-     */
-
-    public function timeDifference($startdate,$enddate){
-        $timediff = $enddate-$startdate;
-        $days = intval($timediff/86400);
-        if($days>0){
-            $timeDifference = $days.'天前';
-        }else{
-            $remain = $timediff%86400;
-            $hours = intval($remain/3600);
-            if($hours>0){
-                $timeDifference = $hours.'小时前';
-            }else{
-                $remain = $remain%3600;
-                $mins = intval($remain/60);
-                if($mins>0){
-                    $timeDifference = $mins.'分钟前';
-                }else{
-                    $secs = $remain%60;
-                    $timeDifference = $mins.'秒钟前';
-                }
-            }
-        }
-        return $timeDifference;
-    }
-
-    /*
+     * 获取自己发表的动态和别人发表的动态
      * 获取当前用户的动态内容及点赞次数，转发次数，举报次数
      * @todo 获取当前用户的头像等信息，看看会不会影响速度
      */
-    public function searchDynamic($args){
+    public function searchDynamic($args)
+    {
+        $this->tools = new Tools();
+
         $offset = isset($args['pageNo'])? $args['pageNo']: 1 ;
         $limit = isset($args['pageSize'])? $args['pageSize']: 15;
         unset($args['pageNo']);
@@ -80,11 +56,11 @@ class Tools
                     $result[$i]['forwardingNumTag'] = $row['forwardingNum'];
                     $startdate=strtotime($result[$i]['createtime']);
                     $enddate=time();
-                    $result[$i]['time'] = $this->timeDifference($startdate,$enddate);
+                    $result[$i]['time'] = $this->tools->timeDifference($startdate,$enddate);
                 }else{
                     $startdate=strtotime($result[$i]['createtime']);
                     $enddate=time();
-                    $result[$i]['time'] = $this->timeDifference($startdate,$enddate);
+                    $result[$i]['time'] = $this->tools->timeDifference($startdate,$enddate);
                     $result[$i]['reportNumTag'] =0;
                     $result[$i]['praiseTag'] = 0;
                     $result[$i]['forwardingNumTag'] =0;
@@ -95,7 +71,7 @@ class Tools
             for ($i=0; $i<$len; $i++){
                 $startdate=strtotime($result[$i]['createtime']);
                 $enddate=time();
-                $result[$i]['time'] = $this->timeDifference($startdate,$enddate);
+                $result[$i]['time'] = $this->tools->timeDifference($startdate,$enddate);
                 $result[$i]['reportNumTag'] =0;
                 $result[$i]['praiseTag'] = 0;
                 $result[$i]['forwardingNumTag'] =0;
@@ -103,5 +79,13 @@ class Tools
         }
         return $result;
     }
+
+    /*
+     * 点赞，举报，转发
+     */
+    public function evaluation($args){
+
+    }
+    
 
 }

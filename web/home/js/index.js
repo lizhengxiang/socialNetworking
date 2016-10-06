@@ -1,12 +1,5 @@
 //小提示框
 /*;*/
-
-Vue.filter('numeric', {
-    read: function(val) {
-        return (val / 100).toFixed(2);
-    }
-});
-
 $(document).ready(function(){
     //绑定数据
     Vue.config.async = false;
@@ -42,11 +35,12 @@ $(document).ready(function(){
         methods: {
             getData: function() {
                 var self = this;
-                load('personal', 'dynamic', {}, function(resultData) {
+                load('dynamic', 'getdynamic', {}, function(resultData) {
                     var len = resultData.length;
                     if(len >= 1){
                         for(var i=0;i<len;i++){
                             self.items.push({
+                                id:resultData[i].id,
                                 speakImg: resultData[i].pic1,
                                 speakImg1:resultData[i].pic2,
                                 speakImg3: resultData[i].pic4,
@@ -99,8 +93,9 @@ $(document).ready(function(){
                 this.information.praiseTag=tag.praiseTag;
                 this.information.forwardingNumTag=tag.forwardingNumTag;
             },
-            say: function (msg) {
-                alert(msg)
+            evaluation:function (id,arg) {
+                console.log(id);
+                console.log(arg);
             }
         }
     });

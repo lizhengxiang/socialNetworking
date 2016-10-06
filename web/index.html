@@ -148,7 +148,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <p data-toggle="tooltip" data-placement="top" title="喜欢" style="text-align:center">
                                     <span v-if="res.praiseTag"><span class="glyphicon glyphicon-heart" style="color: #ff0000;"></span><span style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span>
-                                    <span v-else><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span>
+                                    <span v-else><span v-on:click="evaluation(res.id,'like')"><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span  style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span></span>
                                 </p>
                             </div>
                             <div class="col-md-3 col-sm-6">
@@ -210,7 +210,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
