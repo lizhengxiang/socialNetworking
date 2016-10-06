@@ -90,19 +90,15 @@ class DynamicService
      */
     public function doEevaluation($args){
         //检查该用户是否第一次操作
-        $command = (new \yii\db\Query())
-            ->select('count(*)')
+        $count = (new \yii\db\Query())
             ->from('dynamiclog')
-            ->where('userid=:userid')
-            ->addParams([':userid' => $args['id']]);
+            ->where('dynamicId=:dynamicId and userid=:userid')
+            ->addParams([':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId()]);
         if($args['type'] == 1){
-            $command->andWhere('praise=1');
+            $count->andWhere('praise=1');
         }
-        $command->createCommand();
-        // 打印 SQL 语句
-        print_r($command->params);
-        $rows = $command->one();
-        print_r($rows);exit();
+        $count->all();
+        var_dump($count);exit();
     }
     /*
      * 点赞，举报，转发

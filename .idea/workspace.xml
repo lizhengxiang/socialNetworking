@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22102e4f-4e2c-41cb-bbd3-2dfaceea0d49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/DynamicController.php" afterPath="$PROJECT_DIR$/controllers/DynamicController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SiteController.php" afterPath="$PROJECT_DIR$/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.php" afterPath="$PROJECT_DIR$/models/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/sqldebug/sql.txt" afterPath="$PROJECT_DIR$/runtime/sqldebug/sql.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/DynamicService.php" afterPath="$PROJECT_DIR$/services/DynamicService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Command.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Command.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/home/js/index.js" afterPath="$PROJECT_DIR$/web/home/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/personal/js/index.js" afterPath="$PROJECT_DIR$/web/personal/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/js/load/load.js" afterPath="$PROJECT_DIR$/web/public/js/load/load.js" />
     </list>
     <ignored path="socialNetworking.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +46,7 @@
       <file leaf-file-name="DynamicController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/DynamicController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
+            <state relative-caret-position="379">
               <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
               <folding>
                 <element signature="e#34#42#0#PHP" expanded="true" />
@@ -67,41 +58,11 @@
       <file leaf-file-name="DynamicService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/DynamicService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="103" column="32" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
+            <state relative-caret-position="260">
+              <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
               <folding>
                 <element signature="e#30#38#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Query.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="127" column="26" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connection.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="634" column="30" selection-start-line="634" selection-start-column="30" selection-end-line="634" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Command.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Command.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="337" column="43" selection-start-line="337" selection-start-column="43" selection-end-line="337" selection-end-column="43" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -111,6 +72,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Query.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="634" column="29" selection-start-line="634" selection-start-column="29" selection-end-line="634" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -478,12 +459,12 @@
       <workItem from="1475632875984" duration="5664000" />
       <workItem from="1475675148626" duration="4450000" />
       <workItem from="1475744028795" duration="1522000" />
-      <workItem from="1475750192203" duration="16605000" />
+      <workItem from="1475750192203" duration="18421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389644000" />
+    <option name="totallyTimeSpent" value="391460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="21" width="1309" height="747" extended-state="6" />
@@ -871,14 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/personal/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-567">
@@ -903,9 +876,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/personal/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/DynamicController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
+        <state relative-caret-position="379">
           <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           <folding>
             <element signature="e#34#42#0#PHP" expanded="true" />
@@ -913,36 +894,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/services/DynamicService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="103" column="32" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
+        <state relative-caret-position="260">
+          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
           <folding>
             <element signature="e#30#38#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Query.php">
+    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Command.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="127" column="26" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
+        <state relative-caret-position="395">
+          <caret line="336" column="39" selection-start-line="336" selection-start-column="39" selection-end-line="336" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="634" column="30" selection-start-line="634" selection-start-column="30" selection-end-line="634" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Command.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="337" column="43" selection-start-line="337" selection-start-column="43" selection-end-line="337" selection-end-column="43" />
+        <state relative-caret-position="353">
+          <caret line="634" column="29" selection-start-line="634" selection-start-column="29" selection-end-line="634" selection-end-column="29" />
           <folding />
         </state>
       </provider>

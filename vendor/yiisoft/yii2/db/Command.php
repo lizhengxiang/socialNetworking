@@ -188,7 +188,6 @@ class Command extends Component
         foreach (explode('?', $this->_sql) as $i => $part) {
             $sql .= (isset($params[$i]) ? $params[$i] : '') . $part;
         }
-
         return $sql;
     }
 
@@ -335,7 +334,7 @@ class Command extends Component
             }
         }
         $myfile = fopen("/home/lizhengxiang/socialNetworking/runtime/sqldebug/sql.txt", "a") or die("Unable to open file!");
-        $txt = date('Y-m-d H:i:s')."     ".$this->_sql."\n";
+        $txt = date('Y-m-d H:i:s')."   ".$this->getRawSql()."\n";
         fwrite($myfile, $txt);
         fclose($myfile);
         return $this;
