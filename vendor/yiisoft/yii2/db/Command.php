@@ -334,7 +334,10 @@ class Command extends Component
                 $this->params[$name] = $value;
             }
         }
-
+        $myfile = fopen("/home/lizhengxiang/socialNetworking/runtime/sqldebug/sql.txt", "a") or die("Unable to open file!");
+        $txt = date('Y-m-d H:i:s')."     ".$this->_sql."\n";
+        fwrite($myfile, $txt);
+        fclose($myfile);
         return $this;
     }
 

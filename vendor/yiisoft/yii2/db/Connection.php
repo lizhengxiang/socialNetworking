@@ -632,7 +632,6 @@ class Connection extends Component
             'db' => $this,
             'sql' => $sql,
         ]);
-
         return $command->bindValues($params);
     }
 

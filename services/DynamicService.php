@@ -6,6 +6,7 @@ use yii\db\ActiveRecord;
 
 /**
  * @author Bill <lizhengxiang@huoyunren.com>
+ * 2016-10-06
  */
 class DynamicService
 {
@@ -77,15 +78,48 @@ class DynamicService
                 $result[$i]['forwardingNumTag'] =0;
             }
         }
-        return $result;
+        $request['code'] = 0;
+        $request['status'] = 1;
+        $request['data'] = $result;
+        return $request;
     }
 
+
+    /*
+     * 处理点赞等操作
+     */
+    public function doEevaluation($args){
+        //检查该用户是否第一次操作
+        $command = (new \yii\db\Query())
+            ->select('count(*)')
+            ->from('dynamiclog')
+            ->where('userid=:userid')
+            ->addParams([':userid' => $args['id']]);
+        if($args['type'] == 1){
+            $command->andWhere('praise=1');
+        }
+        $command->createCommand();
+        // 打印 SQL 语句
+        print_r($command->params);
+        $rows = $command->one();
+        print_r($rows);exit();
+    }
     /*
      * 点赞，举报，转发
      */
     public function evaluation($args){
-
+        if($args['arg']=='like' && preg_match('/^\d*$/',$args['id'])){
+            //更具id和类型来操作更新数据 type=1表示点赞
+            $args['type'] = 1;
+            $this->doEevaluation($args);
+            return $args;
+        }else{
+            //表示该用户在做非法操作，暂时status=10表示非法操作
+            //@todo 考虑要不要对非法操作用户非法操作一天达到多少次，锁定该用户的账号30min
+            $request['code'] = 0;
+            $request['status'] = 10;
+            return json_encode($request);
+        }
     }
-    
 
 }

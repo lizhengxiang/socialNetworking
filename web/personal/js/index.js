@@ -34,7 +34,7 @@ $(document).ready(function(){
         methods: {
             getData: function() {
                 var self = this;
-                load('personal', 'dynamic', {}, function(resultData) {
+                load('dynamic', 'getdynamic', {}, function(resultData) {
                     var len = resultData.length;
                     if(len >= 1){
                         for(var i=0;i<len;i++){

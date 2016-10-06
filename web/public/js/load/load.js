@@ -22,7 +22,19 @@ function load(module, method, params, callback) {
                 result = json;
             }
             if (callback){
-                callback(result);
+                if(result.status == 1){
+                    callback(result);
+                }else if(result.status == 0){
+                    layer.msg('请登录', {
+                        offset: 0,
+                        shift: 12
+                    });
+                }else if(result.status == 10){
+                    layer.msg('操作失败，非法操作', {
+                        offset: 0,
+                        shift: 12
+                    });
+                } 
             }
         },
         error:function (json) {

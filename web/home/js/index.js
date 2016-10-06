@@ -36,7 +36,8 @@ $(document).ready(function(){
             getData: function() {
                 var self = this;
                 load('dynamic', 'getdynamic', {}, function(resultData) {
-                    var len = resultData.length;
+                    var len = resultData['data'].length;
+                    resultData = resultData['data'];
                     if(len >= 1){
                         for(var i=0;i<len;i++){
                             self.items.push({
@@ -94,8 +95,9 @@ $(document).ready(function(){
                 this.information.forwardingNumTag=tag.forwardingNumTag;
             },
             evaluation:function (id,arg) {
-                console.log(id);
-                console.log(arg);
+                load('dynamic', 'evaluation', {'id':id,'arg':arg}, function(resultData) {
+                    
+                });
             }
         }
     });

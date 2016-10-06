@@ -53,6 +53,11 @@ class DynamicController extends Controller
      * 点赞，举报，转发接口
      */
     public function actionEvaluation(){
+        if (Yii::$app->user->isGuest) {
+            $request['code'] = 0;
+            $request['status'] = 0;
+            return json_encode($request);
+        }
         $request = Yii::$app->request->post();
         $data = $this->service->evaluation($request);
         $data = json_encode($data);
