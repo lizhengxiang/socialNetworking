@@ -78,6 +78,7 @@ $(document).ready(function(){
                 });
             },
             personalInformation: function (tag){
+                $("#darktooltip-undefined").css('z-index','99999');
                 this.information.speakImg = tag.speakImg;
                 this.information.speakImg1 = tag.speakImg1;
                 this.information.speakImg2 = tag.speakImg2;

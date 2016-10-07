@@ -250,7 +250,53 @@
                 </div>
                 <div style="width: auto;height: 35px; padding-top: 20px;">
                     <div style="width: 35px; float: left">
-                        <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="35" width="35">
+                        <div  class="box" data-tooltip="#html-content1">
+                            <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="35" width="35">
+                        </div>
+                        <div id="html-content1" style="display:none; z-index:99999999;">
+                            <div style="width:290px;height: 232px; background: #ffffff;z-index:99999999;">
+                                <div style="width: 290px;height: 90px;">
+                                    <img v-bind:src = res.backgroundImg width="290px;" height="90px;" v-show="true">
+                                </div>
+                                <div style="width: 72px;height: 72px;left: 12px;top: 60px;position:absolute;">
+                                    <img v-bind:src =res.headImg width="72px;" height="72px;" v-if="res.headImg">
+                                </div>
+                                <div style="width: 185px;height: 72px;left: 80px;top: 95px;position:absolute;">
+                                    <p>
+                                        <span style="font-size: 16px;color: #292f33;font-weight: 700;" v-if="res.nickname">{{res.nickname}}</span></br>
+                                        <span style="font-size: 11px;line-height:15px;color:#8899a6;">{{res.school}}</span>
+                                    </p>
+                                </div>
+                                <div style="width: 20px;height: 72px;left: 257px;top: 100px;position:absolute;">
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-user"></span>+
+                                    </button>
+                                </div>
+                                <div style="width:290px;height: 50px;left: 12px;top: 140px;position:absolute;">
+                                    <p style="font-size: 12px;line-height:15px; color: #292f33;" v-if="res.signature">
+                                        Where the conversation begins. Follow for breaking news, special reports, RTs of our journalists and more from http://NYTimes.com .
+                                    </p>
+                                </div>
+
+                                <div style="width:279px;height: 53px;top: 190px;position:absolute; padding-bottom: 10px;padding-left: 10px;padding-top: 10px;">
+                                    <div style="width: 80px;float: left">
+                                        <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="res.dynamic">
+                                            动态</br><span style="color:#1b95e0;font-size: 18px">{{res.dynamic}}</span>
+                                        </p>
+                                    </div>
+                                    <div style="width: 80px;float: left">
+                                        <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="res.areLookingAt">
+                                            正在关注</br><span style="color:#1b95e0;font-size: 18px">{{res.areLookingAt}}</span>
+                                        </p>
+                                    </div>
+                                    <div style="width: 80px;float: left">
+                                        <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="res.followers">
+                                            关注者</br><span style="color:#1b95e0;font-size: 18px">{{res.followers}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div style="float: left;width: 200px;padding-left: 5px;">
                         <p>
