@@ -69,7 +69,9 @@
         <template v-for="res in items" track-by="$index">
             <div class="col-md-4 col-sm-6 item">
                 <div class="thumbnail">
-                    <img v-bind:src = res.speakImg alt="" v-if="res.speakImg">
+                    <a  data-toggle="modal" data-target="#myModal" style="text-decoration:none;color: #0f0f0f"   v-on:click="personalInformation(res)">
+                        <img v-bind:src = res.speakImg alt="" v-if="res.speakImg">
+                    </a>
                     <div class="caption">
                         <div style="width: auto;height: 35px;">
                             <div style="width: 35px; float: left">
@@ -137,7 +139,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <a  data-toggle="modal" data-target="#myModal" style="text-decoration:none;color: #0f0f0f" v-if="res.content"  v-on:click="personalInformation(res)">
+                                <a  data-toggle="modal" data-target="#myModal1" style="text-decoration:none;color: #0f0f0f" v-if="res.content"  v-on:click="personalInformation(res)">
                                     <p style="margin-top: 10px; word-wrap:break-word">
                                         {{res.content}}
                                     </p>
@@ -220,7 +222,6 @@
                         <li data-target="#carousel-example-generic" data-slide-to="2" v-if="information.speakImg2"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="3" v-if="information.speakImg3"></li>
                     </ol>
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active" v-if="information.speakImg">

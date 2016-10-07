@@ -92,11 +92,13 @@ $(document).ready(function(){
                 this.information.reportNum = tag.reportNum;
                 this.information.reportNumTag=tag.reportNumTag;
                 this.information.praiseTag=tag.praiseTag;
+                this.information.school=tag.school;
                 this.information.forwardingNumTag=tag.forwardingNumTag;
             },
             evaluation:function (id,arg,index) {
                 var self = this;
                 load('dynamic', 'evaluation', {'id':id,'arg':arg}, function(resultData) {
+                    //@todo 不能只更新数组的某个属性，带观察，性能影响如何
                     load('dynamic', 'getdynamic', {'id':id}, function(resultData) {
                         var len = resultData['data'].length;
                         resultData = resultData['data'];
