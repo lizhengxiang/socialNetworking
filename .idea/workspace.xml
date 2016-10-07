@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22102e4f-4e2c-41cb-bbd3-2dfaceea0d49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/DynamicController.php" afterPath="$PROJECT_DIR$/controllers/DynamicController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Tools.php" afterPath="$PROJECT_DIR$/models/Tools.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/DynamicService.php" afterPath="$PROJECT_DIR$/services/DynamicService.php" />
-    </list>
+    <list default="true" id="22102e4f-4e2c-41cb-bbd3-2dfaceea0d49" name="Default" comment="" />
     <ignored path="socialNetworking.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -34,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DynamicController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DynamicController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/DynamicController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+            <state relative-caret-position="127">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding>
                 <element signature="e#34#42#0#PHP" expanded="true" />
               </folding>
@@ -56,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DynamicService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DynamicService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/DynamicService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+            <state relative-caret-position="29">
+              <caret line="106" column="21" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
               <folding>
                 <element signature="e#30#38#0#PHP" expanded="true" />
                 <marker date="1475810534583" expanded="true" signature="4220:4275" ph="update dynam... " />
@@ -82,9 +77,11 @@
       <file leaf-file-name="RegisteredService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/RegisteredService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="84">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+              <folding>
+                <element signature="e#30#38#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -510,12 +507,12 @@
       <workItem from="1475675148626" duration="4450000" />
       <workItem from="1475744028795" duration="1522000" />
       <workItem from="1475750192203" duration="18436000" />
-      <workItem from="1475801949116" duration="7081000" />
+      <workItem from="1475801949116" duration="7224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398556000" />
+    <option name="totallyTimeSpent" value="398699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="21" width="1309" height="747" extended-state="6" />
@@ -917,14 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/RegisteredService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/Tools.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -933,23 +922,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/DynamicService.php">
+    <entry file="file://$PROJECT_DIR$/controllers/DynamicController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+        <state relative-caret-position="127">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding>
-            <element signature="e#30#38#0#PHP" expanded="true" />
-            <marker date="1475810534583" expanded="true" signature="4220:4275" ph="update dynam... " />
+            <element signature="e#34#42#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/DynamicController.php">
+    <entry file="file://$PROJECT_DIR$/services/RegisteredService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+        <state relative-caret-position="84">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding>
-            <element signature="e#34#42#0#PHP" expanded="true" />
+            <element signature="e#30#38#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/DynamicService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="106" column="21" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
+          <folding>
+            <element signature="e#30#38#0#PHP" expanded="true" />
+            <marker date="1475810534583" expanded="true" signature="4220:4275" ph="update dynam... " />
           </folding>
         </state>
       </provider>
