@@ -24,7 +24,12 @@ $(document).ready(function(){
                 reportNum:'',
                 reportNumTag:'',
                 praiseTag:'',
-                forwardingNumTag:''
+                forwardingNumTag:'',
+                backgroundImg:'',
+                headImg:'',
+                dynamic:'',
+                areLookingAt:'',
+                followers:'',
             },
         },
         created: function() {
@@ -78,23 +83,29 @@ $(document).ready(function(){
                 });
             },
             personalInformation: function (tag){
-                $("#darktooltip-undefined").css('z-index','99999');
                 this.information.speakImg = tag.speakImg;
                 this.information.speakImg1 = tag.speakImg1;
                 this.information.speakImg2 = tag.speakImg2;
                 this.information.speakImg3 = tag.speakImg3;
                 this.information.nickname = tag.nickname;
-                this.information.school = tag.script;
                 this.information.titleTime = tag.titleTime;
+                this.information.backgroundImg = tag.backgroundImg;
+                this.information.headImg=tag.headImg;
                 this.information.time = tag.time;
                 this.information.content = tag.content;
                 this.information.likeNum = tag.likeNum;
                 this.information.forwardingNum = tag.forwardingNum;
                 this.information.reportNum = tag.reportNum;
                 this.information.reportNumTag=tag.reportNumTag;
-                this.information.praiseTag=tag.praiseTag;
                 this.information.school=tag.school;
+                this.information.praiseTag=tag.praiseTag;
                 this.information.forwardingNumTag=tag.forwardingNumTag;
+                this.information.dynamic=50;
+                this.information.areLookingAt=200;
+                this.information.followers=10;
+                $('*').darkTooltip({
+
+                });
             },
             evaluation:function (id,arg,index) {
                 var self = this;
@@ -129,11 +140,6 @@ $(document).ready(function(){
                                     forwardingNumTag:resultData[i].forwardingNumTag
                                 });
                             }
-                            //我也不知道为什么要放在在这里
-                            $('*').darkTooltip({
-
-                            });
-                            $("[data-toggle='tooltip']").tooltip();
                         }else {
                             layer.msg('获取数据失败', {
                                 offset: 0,
@@ -147,11 +153,11 @@ $(document).ready(function(){
         }
     });
     //
+    //我也不知道为什么要放在在这里
     $('*').darkTooltip({
 
     });
     $("[data-toggle='tooltip']").tooltip();
-
     //用于处理图片流
     var $container = $('.masonry-container');
     $container.imagesLoaded( function () {

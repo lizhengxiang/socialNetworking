@@ -1,4 +1,4 @@
-.dark-tooltip{ display:none; position:absolute; z-index:99; text-decoration:none; font-weight:normal; height:auto; top:0; left:0;}
+.dark-tooltip{ display:none; position:absolute; z-index:99999; text-decoration:none; font-weight:normal; height:auto; top:0; left:0;}
 
 .dark-tooltip.small{ padding:4px; font-size:12px; max-width:150px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
 .dark-tooltip.medium{ padding:10px; font-size:14px; max-width:200px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
