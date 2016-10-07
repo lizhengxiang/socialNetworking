@@ -71,7 +71,7 @@
             <div class="head_nav">
                 <ul>
                     <li>
-                        <a href="/index.html">主页</a>
+                        <a href="/index.html"><img src="/home/icon/82046491831469223768e3609637d98c" width="90" style="margin-top: 0px;"></a>
                     </li>
                     <li>
                         <a href="/personal/index.html">个人中心</a>
@@ -228,20 +228,20 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
-                                    <a  data-toggle="modal" data-target="#myModal" style="text-decoration:none;color: #0f0f0f" v-if="res.content"  v-on:click="personalInformation(res)">
-                                        <p style="margin-top: 10px; word-wrap:break-word">
-                                            {{res.content}}
-                                        </p>
-                                    </a>
+                                    <p style="margin-top: 10px; word-wrap:break-word">
+                                        {{res.content}}
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <img v-bind:src = res.speakImg alt="" v-if="res.speakImg" width="100%">
+                        <a  data-toggle="modal" data-target="#myModal" style="text-decoration:none;color: #0f0f0f"   v-on:click="personalInformation(res)">
+                            <img v-bind:src = res.speakImg alt="" v-if="res.speakImg" width="100%">
+                        </a>
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-3 col-sm-6">
                                 <p data-toggle="tooltip" data-placement="top" title="喜欢" style="text-align:center">
-                                    <span v-if="res.reportNumTag"><span class="glyphicon glyphicon-heart" style="color: #ff0000;"></span><span style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span>
-                                    <span v-else><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span>
+                                    <span v-if="res.praiseTag==1"><span class="glyphicon glyphicon-heart" style="color: #ff0000;"></span><span style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span>
+                                    <span v-else><span v-on:click="evaluation(res.id,'like',$index)"><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span  style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span></span>
                                 </p>
                             </div>
                             <div class="col-md-3 col-sm-6">
@@ -252,13 +252,13 @@
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <p data-toggle="tooltip" data-placement="top" title="转发" style="text-align:center">
-                                    <span v-if="res.forwardingNumTag"><span class="glyphicon glyphicon-retweet" style="color: #ff0000"></span><span style="padding-left: 6px;">{{res.forwardingNum?res.forwardingNum:0}}</span></span>
+                                    <span v-if="res.forwardingNumTag==1"><span class="glyphicon glyphicon-retweet" style="color: #ff0000"></span><span style="padding-left: 6px;">{{res.forwardingNum?res.forwardingNum:0}}</span></span>
                                     <span v-else><span class="glyphicon glyphicon-retweet" style="color: #8899a6"></span><span style="padding-left: 6px;">{{res.forwardingNum?res.forwardingNum:0}}</span></span>
                                 </p>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <p data-toggle="tooltip" data-placement="top" title="举报" style="text-align:center">
-                                    <span v-if="res.praiseTag"><span class="glyphicon glyphicon-user" style="color: #ff0000"></span><span style="padding-left: 6px;">{{res.reportNum?res.reportNum:0}}</span></span>
+                                    <span v-if="res.reportNumTag==1"><span class="glyphicon glyphicon-user" style="color: #ff0000"></span><span style="padding-left: 6px;">{{res.reportNum?res.reportNum:0}}</span></span>
                                     <span v-else><span class="glyphicon glyphicon-user" style="color: #8899a6"></span><span style="padding-left: 6px;">{{res.reportNum?res.reportNum:0}}</span></span>
                                 </p>
                             </div>
@@ -290,12 +290,55 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
                 <div style="width: auto;height: 35px; ">
-                    <div style="width: 35px; float: left">
+                    <div class="box" data-tooltip="#html-content1" style="width: 35px; float: left">
                         <img src="https://pbs.twimg.com/media/CthYHkzXEAQw7qE.jpg" height="35" width="35">
+                    </div>
+                    <div id="html-content1" style="display:none;">
+                        <div style="width:290px;height: 232px; background: #ffffff;">
+                            <div style="width: 290px;height: 90px;">
+                                <img v-bind:src = information.backgroundImg width="290px;" height="90px;" v-show="true">
+                            </div>
+                            <div style="width: 72px;height: 72px;left: 12px;top: 60px;position:absolute;">
+                                <img v-bind:src =information.headImg width="72px;" height="72px;" v-if="information.headImg">
+                            </div>
+                            <div style="width: 185px;height: 72px;left: 80px;top: 95px;position:absolute;">
+                                <p>
+                                    <span style="font-size: 16px;color: #292f33;font-weight: 700;" v-if="information.nickname">{{information.nickname}}</span></br>
+                                    <span style="font-size: 11px;line-height:15px;color:#8899a6;">{{information.school}}</span>
+                                </p>
+                            </div>
+                            <div style="width: 20px;height: 72px;left: 257px;top: 100px;position:absolute;">
+                                <button type="button" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-user"></span>+
+                                </button>
+                            </div>
+                            <div style="width:290px;height: 50px;left: 12px;top: 140px;position:absolute;">
+                                <p style="font-size: 12px;line-height:15px; color: #292f33;" v-if="information.signature">
+                                    Where the conversation begins. Follow for breaking news, special reports, RTs of our journalists and more from http://NYTimes.com .
+                                </p>
+                            </div>
+
+                            <div style="width:279px;height: 53px;top: 190px;position:absolute; padding-bottom: 10px;padding-left: 10px;padding-top: 10px;">
+                                <div style="width: 80px;float: left">
+                                    <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="information.dynamic">
+                                        动态</br><span style="color:#1b95e0;font-size: 18px">{{information.dynamic}}</span>
+                                    </p>
+                                </div>
+                                <div style="width: 80px;float: left">
+                                    <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="information.areLookingAt">
+                                        正在关注</br><span style="color:#1b95e0;font-size: 18px">{{information.areLookingAt}}</span>
+                                    </p>
+                                </div>
+                                <div style="width: 80px;float: left">
+                                    <p style="font-size: 13px;color:#8899a6; text-align:center" v-if="information.followers">
+                                        关注者</br><span style="color:#1b95e0;font-size: 18px">{{information.followers}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div style="float: left;width: 200px;padding-left: 5px;">
                         <p>
@@ -354,7 +397,7 @@
                 <div class="row" style="margin-top: 7px;">
                     <div class="col-md-3 col-sm-6">
                         <p data-toggle="tooltip" data-placement="top" title="喜欢" style="text-align:center">
-                            <span v-if="information.reportNumTag"><span class="glyphicon glyphicon-heart" style="color: #ff0000;"></span><span style="padding-left: 6px;">{{information.likeNum?information.likeNum:0}}</span></span>
+                            <span v-if="information.praiseTag==1"><span class="glyphicon glyphicon-heart" style="color: #ff0000;"></span><span style="padding-left: 6px;">{{information.likeNum?information.likeNum:0}}</span></span>
                             <span v-else><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span style="padding-left: 6px;">{{information.likeNum?information.likeNum:0}}</span></span>
                         </p>
                     </div>
@@ -366,13 +409,13 @@
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <p data-toggle="tooltip" data-placement="top" title="转发" style="text-align:center">
-                            <span v-if="information.forwardingNumTag"><span class="glyphicon glyphicon-retweet" style="color: #ff0000"></span><span style="padding-left: 6px;">{{information.forwardingNum?information.forwardingNum:0}}</span></span>
+                            <span v-if="information.forwardingNumTag==1"><span class="glyphicon glyphicon-retweet" style="color: #ff0000"></span><span style="padding-left: 6px;">{{information.forwardingNum?information.forwardingNum:0}}</span></span>
                             <span v-else><span class="glyphicon glyphicon-retweet" style="color: #8899a6"></span><span style="padding-left: 6px;">{{information.forwardingNum?information.forwardingNum:0}}</span></span>
                         </p>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <p data-toggle="tooltip" data-placement="top" title="举报" style="text-align:center">
-                            <span v-if="information.praiseTag"><span class="glyphicon glyphicon-user" style="color: #ff0000"></span><span style="padding-left: 6px;">{{information.reportNum?information.reportNum:0}}</span></span>
+                            <span v-if="information.reportNumTag==1"><span class="glyphicon glyphicon-user" style="color: #ff0000"></span><span style="padding-left: 6px;">{{information.reportNum?information.reportNum:0}}</span></span>
                             <span v-else><span class="glyphicon glyphicon-user" style="color: #8899a6"></span><span style="padding-left: 6px;">{{information.reportNum?information.reportNum:0}}</span></span>
                         </p>
                     </div>
