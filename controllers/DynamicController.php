@@ -45,7 +45,6 @@ class DynamicController extends Controller
     public function actionGetdynamic(){
         $request = Yii::$app->request->post();
         $data = $this->service->searchDynamic($request);
-        $data = json_encode($data);
         return $data;
     }
     
@@ -60,7 +59,6 @@ class DynamicController extends Controller
         }
         $request = Yii::$app->request->post();
         $data = $this->service->evaluation($request);
-        $data = json_encode($data);
         return $data;
     }
 }

@@ -78,10 +78,7 @@ class DynamicService
                 $result[$i]['forwardingNumTag'] =0;
             }
         }
-        $request['code'] = 0;
-        $request['status'] = 1;
-        $request['data'] = $result;
-        return $request;
+        return $this->tools->result($result,1,0);
     }
 
 
@@ -97,24 +94,33 @@ class DynamicService
         if($args['type'] == 1){
             $count->andWhere('praise=1');
         }
-        $count->all();
-        var_dump($count);exit();
+        $val = $count->count();
+        if(!$val && $args['type'] == 1){
+            //更新点赞,更新两个表，没有当前记录则需要创建
+            Yii::$app->db->createCommand('REPLACE INTO dynamiclog(praise,dynamicId,userid) VALUES (1,:dynamicId,:userid)',[
+                ':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId()
+                ])
+                ->execute();
+            //更新动态表
+            Yii::$app->db->createCommand('update dynamic set praise=praise+1  WHERE id=:dynamicId',[':dynamicId' => $args['id']])
+                ->execute();
+            return 1;
+        }
     }
     /*
      * 点赞，举报，转发
      */
     public function evaluation($args){
+        $this->tools = new Tools();
         if($args['arg']=='like' && preg_match('/^\d*$/',$args['id'])){
             //更具id和类型来操作更新数据 type=1表示点赞
             $args['type'] = 1;
             $this->doEevaluation($args);
-            return $args;
+            return $this->tools->result($this->doEevaluation($args),1,0);
         }else{
             //表示该用户在做非法操作，暂时status=10表示非法操作
             //@todo 考虑要不要对非法操作用户非法操作一天达到多少次，锁定该用户的账号30min
-            $request['code'] = 0;
-            $request['status'] = 10;
-            return json_encode($request);
+            return $this->tools->result('',10,0);
         }
     }
 
