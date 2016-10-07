@@ -13,7 +13,7 @@ class DynamicService
     private $tools;
     /*
      * 获取自己发表的动态和别人发表的动态
-     * 获取当前用户的动态内容及点赞次数，转发次数，举报次数
+     * 获取当前用户的动态内容及点赞次数，转发次数，举报次数,也可以更具ｉｄ取出对应的说说
      * @todo 获取当前用户的头像等信息，看看会不会影响速度
      */
     public function searchDynamic($args)
@@ -22,9 +22,11 @@ class DynamicService
 
         $offset = isset($args['pageNo'])? $args['pageNo']: 1 ;
         $limit = isset($args['pageSize'])? $args['pageSize']: 15;
+        $userid = isset($args['userid'])?explode(',',$args['userid']):Yii::$app->user->getId();
+        $id = isset($args['id'])? $args['id']: 0;
         unset($args['pageNo']);
         unset($args['pageSize']);
-        $userid = isset($args['userid'])?explode(',',$args['userid']):Yii::$app->user->getId();
+        unset($args['userid']);
         $rows = (new \yii\db\Query())
             ->select(['dynamic.id','dynamic.userid','content',
                 'pic1','pic2','pic3','pic4','dynamic.createtime','praise','forwardingNum','reportNum','registered.headPortrait','registered.backgroundImage',
@@ -35,6 +37,9 @@ class DynamicService
         $rows->where('dynamic.deleted=0');
         if(isset($userid)){
             $rows->andWhere(['dynamic.userid'=>$userid]);
+        }
+        if($id != 0 && preg_match('/^\d*$/',$id)){
+            $rows->andWhere('dynamic.id =:id',[':id' => $id]);
         }
         $result = $rows ->offset($offset-1)->limit($limit)->all();
         /*
@@ -102,7 +107,7 @@ class DynamicService
                 ])
                 ->execute();
             //更新动态表
-            Yii::$app->db->createCommand('update dynamic set praise=praise+1  WHERE id=:dynamicId',[':dynamicId' => $args['id']])
+            Yii::$app->db->createCommand('update dynamic set praise=praise+1,updatetime=now()  WHERE id=:dynamicId',[':dynamicId' => $args['id']])
                 ->execute();
             return 1;
         }
@@ -115,7 +120,6 @@ class DynamicService
         if($args['arg']=='like' && preg_match('/^\d*$/',$args['id'])){
             //更具id和类型来操作更新数据 type=1表示点赞
             $args['type'] = 1;
-            $this->doEevaluation($args);
             return $this->tools->result($this->doEevaluation($args),1,0);
         }else{
             //表示该用户在做非法操作，暂时status=10表示非法操作

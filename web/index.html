@@ -30,7 +30,7 @@
             <div class="head_nav">
                 <ul>
                     <li>
-                        <a href="/index.html">主页</a>
+                        <a href="/index.html"><img src="/home/icon/82046491831469223768e3609637d98c" width="90" style="margin-top: 0px;"></a>
                     </li>
                     <li>
                         <a href="/personal/index.html">个人中心</a>
@@ -148,7 +148,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <p data-toggle="tooltip" data-placement="top" title="喜欢" style="text-align:center">
                                     <span v-if="res.praiseTag==1"><span class="glyphicon glyphicon-heart" style="color: #ff0000;"></span><span style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span>
-                                    <span v-else><span v-on:click="evaluation(res.id,'like')"><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span  style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span></span>
+                                    <span v-else><span v-on:click="evaluation(res.id,'like',$index)"><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span  style="padding-left: 6px;">{{res.likeNum?res.likeNum:0}}</span></span></span>
                                 </p>
                             </div>
                             <div class="col-md-3 col-sm-6">

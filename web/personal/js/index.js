@@ -35,7 +35,8 @@ $(document).ready(function(){
             getData: function() {
                 var self = this;
                 load('dynamic', 'getdynamic', {}, function(resultData) {
-                    var len = resultData.length;
+                    var len = resultData['data'].length;
+                    resultData = resultData['data'];
                     if(len >= 1){
                         for(var i=0;i<len;i++){
                             self.items.push({
