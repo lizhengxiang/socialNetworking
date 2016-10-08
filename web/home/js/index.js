@@ -32,6 +32,7 @@ $(document).ready(function(){
                 dynamic:'',
                 areLookingAt:'',
                 followers:'',
+                signature:''
             },
         },
         created: function() {
@@ -104,6 +105,7 @@ $(document).ready(function(){
                 this.information.school=tag.school;
                 this.information.praiseTag=tag.praiseTag;
                 this.information.forwardingNumTag=tag.forwardingNumTag;
+                this.information.signature = tag.signature;
                 this.information.dynamic=50;
                 this.information.areLookingAt=200;
                 this.information.followers=10;
