@@ -41,7 +41,7 @@ class Tools
     /*
      * 封装返回的结果
      * $status＝１表示成功，$status＝０表示未登录，$status＝１0非法操作
-     * @todo $status＝１0　要不要将该用户进行退出操作，并锁定该用户30min
+     * @todo $status＝１0　要不要将该用户进行退出操作，并锁定该用户30min，若非登陆用户则进行Ip锁定
      */
     public function result($data,$status,$code){
         $result = [];
