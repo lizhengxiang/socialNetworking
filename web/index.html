@@ -69,7 +69,7 @@
         <template v-for="res in items" track-by="$index">
             <div class="col-md-4 col-sm-6 item">
                 <div class="thumbnail">
-                    <a  data-toggle="modal" data-target="#myModal" style="text-decoration:none;color: #0f0f0f"   v-on:click="personalInformation(res)">
+                    <a  data-toggle="modal" data-target="#myModal" style="text-decoration:none;color: #0f0f0f"   v-on:click="personalInformation(res,$index)">
                         <img v-bind:src = res.speakImg alt="" v-if="res.speakImg">
                     </a>
                     <div class="caption">
@@ -168,7 +168,7 @@
                             <div class="col-md-3 col-sm-6">
                                 <p data-toggle="tooltip" data-placement="top" title="举报" style="text-align:center">
                                     <span v-if="res.reportNumTag==1"><span class="glyphicon glyphicon-user" style="color: #ff0000"></span><span style="padding-left: 6px;">{{res.reportNum?res.reportNum:0}}</span></span>
-                                    <span v-else><span class="glyphicon glyphicon-user" style="color: #8899a6"></span><span style="padding-left: 6px;">{{res.reportNum?res.reportNum:0}}</span></span>
+                                    <span v-else><span v-on:click="evaluation(res.id,'report',$index)"><span class="glyphicon glyphicon-user" style="color: #8899a6"></span><span style="padding-left: 6px;">{{res.reportNum?res.reportNum:0}}</span></span></span>
                                 </p>
                             </div>
                         </div>
@@ -321,7 +321,7 @@
                     <div class="col-md-3 col-sm-6">
                         <p data-toggle="tooltip" data-placement="top" title="喜欢" style="text-align:center">
                             <span v-if="information.praiseTag==1"><span class="glyphicon glyphicon-heart" style="color: #ff0000;"></span><span style="padding-left: 6px;">{{information.likeNum?information.likeNum:0}}</span></span>
-                            <span v-else><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span style="padding-left: 6px;">{{information.likeNum?information.likeNum:0}}</span></span>
+                            <span v-else><span v-on:click="evaluation(information.id,'like',information.index)"><span class="glyphicon glyphicon-heart" style="color: #8899a6;"></span><span style="padding-left: 6px;">{{information.likeNum?information.likeNum:0}}</span></span></span>
                         </p>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -339,7 +339,7 @@
                     <div class="col-md-3 col-sm-6">
                         <p data-toggle="tooltip" data-placement="top" title="举报" style="text-align:center">
                             <span v-if="information.reportNumTag==1"><span class="glyphicon glyphicon-user" style="color: #ff0000"></span><span style="padding-left: 6px;">{{information.reportNum?information.reportNum:0}}</span></span>
-                            <span v-else><span class="glyphicon glyphicon-user" style="color: #8899a6"></span><span style="padding-left: 6px;">{{information.reportNum?information.reportNum:0}}</span></span>
+                            <span v-else><span v-on:click="evaluation(information.id,'report',information.index)"><span class="glyphicon glyphicon-user" style="color: #8899a6"></span><span style="padding-left: 6px;">{{information.reportNum?information.reportNum:0}}</span></span></span>
                         </p>
                     </div>
                 </div>

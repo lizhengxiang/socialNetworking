@@ -10,6 +10,8 @@ $(document).ready(function(){
                 
             ],
             information: {
+                index:'',
+                id:'',
                 speakImg:'',
                 speakImg1:'',
                 speakImg2:'',
@@ -82,7 +84,9 @@ $(document).ready(function(){
                     }
                 });
             },
-            personalInformation: function (tag){
+            personalInformation: function (tag,index){
+                this.information.index = index;
+                this.information.id = tag.id;
                 this.information.speakImg = tag.speakImg;
                 this.information.speakImg1 = tag.speakImg1;
                 this.information.speakImg2 = tag.speakImg2;
@@ -140,6 +144,7 @@ $(document).ready(function(){
                                     forwardingNumTag:resultData[i].forwardingNumTag
                                 });
                             }
+                            self.personalInformation(self.items[index],index);
                         }else {
                             layer.msg('获取数据失败', {
                                 offset: 0,

@@ -50,4 +50,16 @@ class Tools
         return json_encode($result);
     }
 
+    /*
+     *更具id和userid检查该用户有没有权限修改帖子的权限
+     * return １表示有权限，0表示没有权限
+     */
+
+    public function validateDynamic($id){
+        $count = (new \yii\db\Query())
+            ->from('dynamic')
+            ->where('id=:id and userid=:userid')
+            ->addParams([':id' => $id,':userid' => Yii::$app->user->getId()]);
+        return $val = $count->count();
+    }
 }

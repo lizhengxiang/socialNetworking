@@ -27,10 +27,11 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        Yii::$app->user->isGuest;
         //throw new \yii\web\HttpException(500);
-        /*if (!Yii::$app->user->isGuest) {
+        if (!Yii::$app->user->isGuest) {
             return $this->goBack();
-        }*/
+        }
         
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {

@@ -98,18 +98,54 @@ class DynamicService
             ->addParams([':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId()]);
         if($args['type'] == 1){
             $count->andWhere('praise=1');
+        }elseif($args['type'] == 2){
+            $count->andWhere('reportNum=1');
         }
         $val = $count->count();
         if(!$val && $args['type'] == 1){
+            //这里看下是需要创建还是更新
+            $count = (new \yii\db\Query())
+                ->from('dynamiclog')
+                ->where('dynamicId=:dynamicId and userid=:userid')
+                ->addParams([':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId()]);
+            $tag = $count->count();
             //更新点赞,更新两个表，没有当前记录则需要创建
-            Yii::$app->db->createCommand('REPLACE INTO dynamiclog(praise,dynamicId,userid) VALUES (1,:dynamicId,:userid)',[
-                ':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId()
-                ])
-                ->execute();
+            if(!$tag){
+                Yii::$app->db->createCommand('insert INTO dynamiclog(praise,dynamicId,userid) VALUES (1,:dynamicId,:userid)',[
+                    ':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId()
+                ])->execute();
+            }else{
+                Yii::$app->db->createCommand('update dynamiclog set praise=1 WHERE dynamicId=:dynamicId AND userid=:userid',[':dynamicId' => $args['id'],':userid' =>Yii::$app->user->getId()])
+                    ->execute();
+            }
             //更新动态表
             Yii::$app->db->createCommand('update dynamic set praise=praise+1,updatetime=now()  WHERE id=:dynamicId',[':dynamicId' => $args['id']])
                 ->execute();
             return 1;
+        }elseif(!$val && $args['type'] == 2){
+            //@todo　这里需要考虑举报达到五次后怎么处理
+            //这里看下是需要创建还是更新
+            $count = (new \yii\db\Query())
+                ->from('dynamiclog')
+                ->where('dynamicId=:dynamicId and userid=:userid')
+                ->addParams([':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId()]);
+            $tag = $count->count();
+            //更新点赞,更新两个表，没有当前记录则需要创建
+            if(!$tag){
+                Yii::$app->db->createCommand('insert INTO dynamiclog(reportNum,dynamicId,userid) VALUES (1,:dynamicId,:userid)',[
+                    ':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId()
+                ])->execute();
+            }else{
+                Yii::$app->db->createCommand('update dynamiclog set reportNum=1 WHERE dynamicId=:dynamicId AND userid=:userid',[':dynamicId' => $args['id'],':userid' =>Yii::$app->user->getId()])
+                    ->execute();
+            }
+            //更新动态表
+            Yii::$app->db->createCommand('update dynamic set reportNum=reportNum+1,updatetime=now()  WHERE id=:dynamicId',[':dynamicId' => $args['id']])
+                ->execute();
+            return 1;
+        }else{
+            //非法操作
+            return 10;
         }
     }
     /*
@@ -120,6 +156,10 @@ class DynamicService
         if($args['arg']=='like' && preg_match('/^\d*$/',$args['id'])){
             //更具id和类型来操作更新数据 type=1表示点赞
             $args['type'] = 1;
+            return $this->tools->result($this->doEevaluation($args),1,0);
+        }else if($args['arg']=='report' && preg_match('/^\d*$/',$args['id'])){
+            //更具id和类型来操作更新数据 type=2表示举报
+            $args['type'] = 2;
             return $this->tools->result($this->doEevaluation($args),1,0);
         }else{
             //表示该用户在做非法操作，暂时status=10表示非法操作
