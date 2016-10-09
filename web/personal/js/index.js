@@ -30,8 +30,20 @@ $(document).ready(function(){
                 areLookingAt:'',
                 followers:'',
             },
+            informationData:{
+                headPortrait:'',
+                backgroundImage:'',
+                motto:'',
+                nickname:'',
+                birthday:'',
+                gender:'',
+                school:'',
+                self:'',
+                createtime:'',
+            },
         },
         created: function() {
+            this.getInformation();
         },
         ready: function() {
             this.getData();
@@ -148,6 +160,21 @@ $(document).ready(function(){
                     });
 
                 });
+            },
+            getInformation:function () {
+                var self = this;
+                load('personal', 'getuserinformation', {}, function(resultData) {
+                    resultData = resultData['data'];
+                    self.informationData.headPortrait=resultData.headPortrait;
+                    self.informationData.backgroundImage=resultData.backgroundImage;
+                    self.informationData.motto=resultData.motto;
+                    self.informationData.nickname=resultData.nickname;
+                    self.informationData.birthday=resultData.birthday.substring(0,10);
+                    self.informationData.gender=resultData.gender;
+                    self.informationData.school=resultData.school;
+                    self.informationData.self=resultData.self;
+                    self.informationData.createtime=resultData.createtime.substring(0,10);
+                })
             }
 
         }

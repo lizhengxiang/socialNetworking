@@ -30,4 +30,15 @@ class PersonalController extends Controller
         return $data;
     }
 
+    /*
+     * @author Bill <lizhengxiang@huoyunren.com>
+     * 2016-10-09 17:26
+     * 给主页点赞
+     */
+    public function actionThumbup(){
+        $request = Yii::$app->request->post();
+        $data = $this->service->thumbUp($request);
+        return $data;
+    }
+
 }

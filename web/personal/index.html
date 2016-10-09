@@ -105,7 +105,7 @@
 
 </nav><!--小导航条-->
 <div style="width: 100%;height: 350px; top: 65px; position: absolute;">
-    <img src="https://pbs.twimg.com/profile_banners/14660721/1462918474/1500x500" width="100%" height="350">
+    <img v-bind:src = informationData.backgroundImage width="100%" height="350">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -134,14 +134,14 @@
 </div>
 <div class="container">
     <div style="width: 200px;height: 200px;top: 320px;position:absolute; background: #ffffff; padding: 10px;">
-        <img src="https://pbs.twimg.com/profile_images/767803554744635393/cMhf51BU_400x400.jpg" width="180px;" height="180px;" class="img-rounded">
+        <img v-bind:src = informationData.headPortrait width="180px;" height="180px;" class="img-rounded">
     </div>
     <div style="width: 250px;position: absolute;top: 520px;">
-        <p style="font-size: 18px;font-weight: 700;">Marvel Entertainment</p>
-        <p style="color: #8899a6;line-height: 0px;">西南名族大学</p>
-        <p>Online entrepreneur, fitness enthusiast, fashion aficionado, and tech lover. - That's me.</p>
-        <span class="glyphicon glyphicon-calendar"></span>加入于2008年5月</br>
-        <span class="glyphicon glyphicon-user" style="margin-top: 3px;"></span>生于1992年5月</br>
+        <p style="font-size: 18px;font-weight: 700;">{{informationData.nickname}}</p>
+        <p style="color: #8899a6;line-height: 0px;">{{informationData.school}}</p>
+        <p>{{informationData.motto}}</p>
+        <span class="glyphicon glyphicon-calendar"></span>加入于{{informationData.createtime}}</br>
+        <span class="glyphicon glyphicon-user" style="margin-top: 3px;"></span>生于{{informationData.birthday}}</br>
         <span class="glyphicon glyphicon-film" style="margin-top: 3px;"></span><span style="color: #ff0000"> 1,472 个照片和视频</span>
         <div style="width: 250px;position: absolute;">
             <div class="col-md-4 ">
