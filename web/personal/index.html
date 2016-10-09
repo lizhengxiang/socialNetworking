@@ -275,8 +275,8 @@
                     <div class="center_top_content">
                     </div>
                     <div class="guli">
-                        <div class="encourage"><span class="glyphicon glyphicon-thumbs-up"></span></div>
-                        <p style="margin-left: 18px;">已有<span class="guli_num">296</span>人点赞</p>
+                        <div class="encourage"><span v-on:click="thumbUp()"><span class="glyphicon glyphicon-thumbs-up"></span></span></div>
+                        <p style="margin-left: 18px;">已有<span class="guli_num">{{informationData.thumb}}</span>人点赞</p>
                     </div>
                 </div><!--center_top结束-->
             </div>

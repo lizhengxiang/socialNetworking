@@ -24,7 +24,7 @@ class PersonalService
             //根据用户userid查找该用户的基本信息
             $row = (new \yii\db\Query())
                 ->select(['registered.headPortrait','registered.backgroundImage','registered.motto','registered.nickname',
-                    'registered.birthday','registered.gender','registered.createtime','school.name as school'])
+                    'registered.birthday','registered.gender','registered.createtime','registered.thumb','school.name as school'])
                 ->from('registered')
                 ->where('userid=:userid')
                 ->addParams([':userid' => $userid])
@@ -58,6 +58,10 @@ class PersonalService
      * 给主页点赞，点赞每个用户给他人每天只能点一次赞,点赞也可以自己给自己点赞
      */
     public function thumbUp($args){
+        $this->tools = new Tools();
+        if(empty($args['userid'])){
+            $args['userid'] = Yii::$app->user->getId();
+        }
         if(preg_match('/^\d*$/',$args['userid'])){
             $args['thumbupuserid']=Yii::$app->user->getId();
             if($args['thumbupuserid'] == null){
@@ -68,12 +72,26 @@ class PersonalService
             $endTime = $time.' 23:59:59';
             $count = (new \yii\db\Query())
                 ->from('thumblog')
-                ->where('thumbupuserid=:thumbupuserid and userid=:userid　and createtime>=:startTime and createtime<=:endTime')
-                ->addParams([':dynamicId' => $args['id'],':userid' => Yii::$app->user->getId(),':endTime'=>$endTime,':startTime'=>$startTime]);
+                ->where('thumbupuserid=:thumbupuserid and userid=:userid and createtime>=:startTime and createtime<=:endTime')
+                ->addParams([':userid' => $args['userid'],':thumbupuserid' => Yii::$app->user->getId(),':endTime'=>$endTime,':startTime'=>$startTime]);
             $tag = $count->count();
-            if($tag){
-                
+            if(!$tag){
+                Yii::$app->db->createCommand('update registered set thumb=thumb+1 WHERE userid=:userid',[':userid' =>$args['userid']])
+                    ->execute();
+                Yii::$app->db->createCommand('insert INTO thumblog(thumbupuserid,userid) VALUES (:thumbupuserid,:userid)',[
+                    ':userid' => $args['userid'],':thumbupuserid' => Yii::$app->user->getId()
+                ])->execute();
+                $data=[];
+                //表示该用户点赞成功
+                $data['thump'] = 1;
+                return $this->tools->result($data,1,0);
             }
+            $data=[];
+            //表示该用户今天已经点赞
+            $data['thump'] = 0;
+            return $this->tools->result($data,1,0);
+        }else{
+            return $this->tools->result('',10,0);
         }
     }
 }

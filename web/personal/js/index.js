@@ -40,6 +40,7 @@ $(document).ready(function(){
                 school:'',
                 self:'',
                 createtime:'',
+                thumb:'',
             },
         },
         created: function() {
@@ -174,6 +175,20 @@ $(document).ready(function(){
                     self.informationData.school=resultData.school;
                     self.informationData.self=resultData.self;
                     self.informationData.createtime=resultData.createtime.substring(0,10);
+                    self.informationData.thumb=resultData.thumb;
+                })
+            },
+            thumbUp:function () {
+                var self = this;
+                load('personal', 'thumbup', {}, function(resultData) {
+                    if(resultData.data.thump == 0){
+                        layer.msg('亲，每天只有一次机会，明天再来', {
+                            offset: 0,
+                            shift: 12
+                        });
+                    }else {
+                        self.getInformation();
+                    }
                 })
             }
 
