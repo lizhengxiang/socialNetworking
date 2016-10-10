@@ -44,9 +44,10 @@ $(document).ready(function(){
             },
         },
         created: function() {
-            this.getInformation();
+
         },
         ready: function() {
+            this.getInformation();
             this.getData();
         },
         methods: {
@@ -184,7 +185,7 @@ $(document).ready(function(){
                     if(resultData.data.thump == 0){
                         layer.msg('亲，每天只有一次机会，明天再来', {
                             offset: 0,
-                            shift: 12
+                            shift: 12,
                         });
                     }else {
                         self.getInformation();

@@ -14,16 +14,17 @@ use yii\di\ServiceLocator;
 use yii\caching\FileCache;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
-
 class SiteController extends Controller
 {
-
-
-
     public function actionIndex()
     {
+        //echo phpinfo();exit();
+        //Yii::$app->redis->set('test','rerere');  //设置redis缓存
+        /*echo Yii::$app->redis->get('test');   //读取redis缓存
+        exit;*/
         return $this->render('index');
     }
+
 
     public function actionLogin()
     {

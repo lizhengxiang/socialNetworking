@@ -1,6 +1,7 @@
 <?php
 
 namespace app\models;
+use yii\db\ActiveRecord;
 
 class User extends \yii\base\Object implements \yii\web\IdentityInterface
 {
@@ -58,11 +59,29 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
-        foreach (self::$users as $user) {
+        /*
+         * 根据登陆名字获取用户
+         */
+       $rows = (new \yii\db\Query())
+            ->select(['id', 'userid','password'])
+            ->from('registered')
+           ->where('userid=:userid')
+           ->addParams([':userid' => $username])
+           ->one();
+        if($rows){
+            $user = [];
+            $user['id'] = $rows['id'];
+            $user['username'] = $rows['userid'];
+            $user['password'] = $rows['password'];
+            $user['authKey'] = md5(md5($user['username']).md5($user['password']));
+            $user['accessToken'] = md5($user['authKey']);
+            return new static($user);
+        }
+        /*foreach (self::$users as $user) {
             if (strcasecmp($user['username'], $username) === 0) {
                 return new static($user);
             }
-        }
+        }*/
 
         return null;
     }
