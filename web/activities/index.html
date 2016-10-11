@@ -12,24 +12,19 @@
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/www/js/layer/layer.js"></script>
     <script src="/public/js/load/load.js"></script>
+    <link rel="stylesheet" href="/public/js/bootstraptable/css/bootstrap-table.min.css">
+    <!--<script src="assets/bootstrap2.3/js/bootstrap.min.js"></script>-->
+    <script src="/public/js/bootstraptable/js/tableExport.js"></script>
+    <script src="/public/js/bootstraptable/js/bootstrap-table.js"></script>
+    <script src="/public/js/bootstraptable/js/bootstrap-table-export.js"></script>
 </head>
 <style>
 
 </style>
 <body >
 <div class="container">
-<form id="frmSearch">
-    <section class="form-group" style="margin-left: 20%;" id="tsfto">
-    <label class="col-sm-2 control-label" style="width: auto;margin-top: 7px; font-size: medium;">字段:</label>
-    <input type="text" class="form-control" id="fielda" name ="fielda" placeholder="" style="width: auto;float: left;height: 30px;margin-top: 5px;">
-    <label class="col-sm-2 control-label" style="width: auto;margin-top: 7px; font-size: medium;">描述:</label>
-    <input type="text" class="form-control" id="fieldb" name ="fieldb" placeholder="" style="width: auto;float: left;height: 30px;margin-top: 5px;">
-    <img src="/activities/img/add.png" style="cursor: pointer; margin-top: 7px; margin-right: 25%;" onclick="addNewTsf();">
-    <br>
-    </section>
-</form>
-    <button type="button" id="create" style="margin-left: 43%;margin-top: 10px;font-size: medium;" class="btn btn-primary">提交</button>
+    <table id="table" class="table table-hover"></table>
 </div>
 </body>
-<script type="text/javascript"  src="/activities/js/createactivities.js"></script>
+<script type="text/javascript"  src="/activities/js/index.js"></script>
 </html>
