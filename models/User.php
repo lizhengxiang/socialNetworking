@@ -70,7 +70,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
            ->one();
         if($rows){
             $user = [];
-            $user['id'] = $rows['id'];
+            $user['id'] = $rows['userid'];
             $user['username'] = $rows['userid'];
             $user['password'] = $rows['password'];
             $user['authKey'] = md5(md5($user['username']).md5($user['password']));

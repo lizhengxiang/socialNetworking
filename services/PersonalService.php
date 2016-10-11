@@ -18,7 +18,6 @@ class PersonalService
     public function GetUserInformation($args)
     {
         $this->tools = new Tools();
-
         $userid = isset($args['userid'])?$args['userid']:Yii::$app->user->getId();
         if(preg_match('/^\d*$/',$userid)){
             //根据用户userid查找该用户的基本信息
