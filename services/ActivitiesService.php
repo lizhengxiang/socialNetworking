@@ -41,8 +41,8 @@ class ActivitiesService
             //开启事物，万一一个表插入成功，另一个表不成功怎么办，字段名称用逗号隔开
             $tr = Yii::$app->db->beginTransaction();
             try {
-                Yii::$app->db->createCommand($sql)
-                    ->execute();
+                /*Yii::$app->db->createCommand($sql)
+                    ->execute();*/
                 Yii::$app->db->createCommand('insert INTO activities(userid,tablename,activitiesname,`column`,`authorization`) VALUES (:userid,:tablename,:activitiesname,:colum,:autho)',[
                     ':userid' => $userid,':tablename' => $name,':activitiesname' => $activitiesname,':colum' => $columnName,'autho'=>$authorization
                 ])->execute();
@@ -57,6 +57,7 @@ class ActivitiesService
     }
 
     public function getActivities($args){
+        $this->tools = new Tools();
         $userid = Yii::$app->user->getId();
         $offset = isset($args['offset'])?$args['offset']:0;
         $limit = isset($args['limit'])?$args['limit']:10;
