@@ -1,39 +1,43 @@
 var $table = $('#table'), $remove = $('#remove'), selections = [];
+var row=[
+    {
+        field: 'id',
+        title: 'Item Detail',
+        align: 'center'
+    },
+    {
+        field: 'name',
+        title: 'Item Name',
+        align: 'center'
+    },
+    {
+        field: 'price',
+        title: 'Item Price',
+        align: 'center',
+    }
 
-function initTable() {
-    $table.bootstrapTable({
-        height: getHeight(),
-        columns: [
-            {
-                field: 'id',
-                title: 'Item Detail',
-                align: 'center'
-            },
-            {
-                field: 'name',
-                title: 'Item Name',
-                align: 'center'
-            },
-            {
-                field: 'price',
-                title: 'Item Price',
-                align: 'center',
-            }
-
-        ]
-    });
-    // sometimes footer render error.
-    setTimeout(function () {
-        $table.bootstrapTable('resetView');
-    }, 200);
-
-}
-
-function getHeight() {
-    return $(window).height() - $('h1').outerHeight(true);
-}
+]
 
 $(function () {
+    load('activities', 'getdynamic', {}, function(resultData) {
+
+    });
+    function initTable() {
+        $table.bootstrapTable({
+            height: getHeight(),
+            columns: row,
+        });
+        // sometimes footer render error.
+        setTimeout(function () {
+            $table.bootstrapTable('resetView');
+        }, 200);
+
+    }
+
+    function getHeight() {
+        return $(window).height() - $('h1').outerHeight(true);
+    }
+
     var scripts = [
             location.search.substring(1) || '/public/js/bootstraptable/js/bootstrap-table.js',
         ],
