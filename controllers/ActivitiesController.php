@@ -30,7 +30,7 @@ class ActivitiesController extends Controller
     }
     
     public function actionGetactivities(){
-        $request = Yii::$app->request->post();
+        $request = Yii::$app->request->get();
         $data = $this->service->getActivities($request);
         $data = json_encode($data);
         return $data;

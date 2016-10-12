@@ -57,14 +57,32 @@ class ActivitiesService
     }
 
     public function getActivities($args){
-        $data=[];
-        $data['total'] = 800;
-        for ($i=0; $i < 10; $i++){
-            $data['rows'][$i]['id'] = $i;
-            $data['rows'][$i]['price'] = $i;
-            $data['rows'][$i]['name'] = 'lizhengxiang'.$i;
+        $userid = Yii::$app->user->getId();
+        $offset = isset($args['offset'])?$args['offset']:0;
+        $limit = isset($args['limit'])?$args['limit']:10;
+        if(!preg_match('/^\d*$/',$offset) || !preg_match('/^\d*$/',$limit)){
+            return $this->tools->result('',10,0);
         }
-        return $data;
+        if($userid != ''){
+            $count = (new \yii\db\Query())
+                ->select(['id', 'activitiesname','authorization','authorization','createtime','deleted'])
+                ->from('activities')
+                ->where(['userid'=>$userid])
+                ->count();
+            $result = (new \yii\db\Query())
+                ->select(['id', 'activitiesname','authorization','authorization','createtime','deleted'])
+                ->from('activities')
+                ->limit($limit)
+                ->offset($offset)
+                ->where(['userid'=>$userid])
+                ->all();
+            $data=[];
+            $data['total'] = $count;
+            $data['rows'] = $result;
+            return $data;
+        }else{
+            return $this->tools->result('',0,0);
+        }
     }
 
 }

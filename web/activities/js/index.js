@@ -1,27 +1,24 @@
 var $table = $('#table'), $remove = $('#remove'), selections = [];
 var row=[
     {
-        field: 'id',
-        title: 'Item Detail',
+        field: 'activitiesname',
+        title: '名称',
         align: 'center'
     },
     {
-        field: 'name',
-        title: 'Item Name',
+        field: 'authorization',
+        title: '授权码',
         align: 'center'
     },
     {
-        field: 'price',
-        title: 'Item Price',
+        field: 'createtime',
+        title: '创建时间',
         align: 'center',
     }
-
 ]
 
 $(function () {
-    load('activities', 'getdynamic', {}, function(resultData) {
 
-    });
     function initTable() {
         $table.bootstrapTable({
             height: getHeight(),
@@ -35,7 +32,7 @@ $(function () {
     }
 
     function getHeight() {
-        return $(window).height() - $('h1').outerHeight(true);
+        return $(window).height() - $('h1').outerHeight(true)-100;
     }
 
     var scripts = [
