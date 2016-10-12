@@ -86,4 +86,35 @@ class ActivitiesService
         }
     }
 
+    //获取报名详情
+    public function Getdetails($args){
+        $this->tools = new Tools();
+        $userid = Yii::$app->user->getId();
+        $offset = isset($args['offset'])?$args['offset']:0;
+        $limit = isset($args['limit'])?$args['limit']:10;
+        if(!preg_match('/^\d*$/',$offset) || !preg_match('/^\d*$/',$limit)){
+            return $this->tools->result('',10,0);
+        }
+        if($userid != ''){
+            $count = (new \yii\db\Query())
+                ->select(['id', 'activitiesname','authorization','authorization','createtime','deleted'])
+                ->from('activities')
+                ->where(['userid'=>$userid])
+                ->count();
+            $result = (new \yii\db\Query())
+                ->select(['id', 'activitiesname','authorization','authorization','createtime','deleted'])
+                ->from('activities')
+                ->limit($limit)
+                ->offset($offset)
+                ->where(['userid'=>$userid])
+                ->all();
+            $data=[];
+            $data['total'] = $count;
+            $data['rows'] = $result;
+            return $data;
+        }else{
+            return $this->tools->result('',0,0);
+        }
+    }
+
 }

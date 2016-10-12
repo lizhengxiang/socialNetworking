@@ -28,7 +28,8 @@ class ActivitiesController extends Controller
         return $data;
 
     }
-    
+
+    //按用户获取创建的活动
     public function actionGetactivities(){
         $request = Yii::$app->request->get();
         $data = $this->service->getActivities($request);
@@ -36,7 +37,13 @@ class ActivitiesController extends Controller
         return $data;
     }
 
-
+    //获取报名数据
+    public function actionGetdetails(){
+        $request = Yii::$app->request->get();
+        $data = $this->service->Getdetails($request);
+        $data = json_encode($data);
+        return $data;
+    }
 
 
 }

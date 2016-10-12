@@ -1,9 +1,13 @@
 var $table = $('#table'), $remove = $('#remove'), selections = [];
-var row=
 
-
+//获取url中的参数
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+var id= getUrlParam('id');
 $(function () {
-
     function operateFormatter(value, row, index) {
         return [
             '<a class="like" href="javascript:void(0)" title="Like">',
@@ -14,12 +18,13 @@ $(function () {
 
     window.operateEvents = {
         'click .like': function (e, value, row, index) {
-            window.location.href="/activities/details.html&id="+row.id;
+            window.location.href="/activities/details.html?id="+row.id;
         }
     };
 
     function initTable() {
         $table.bootstrapTable({
+            url:"/index.php?r=activities/getdetails&id="+id,
             height: getHeight(),
             columns: [
                 {
@@ -57,7 +62,7 @@ $(function () {
     }
 
     var scripts = [
-            location.search.substring(1) || '/public/js/bootstraptable/js/bootstrap-table.js',
+             '/public/js/bootstraptable/js/bootstrap-table.js',
         ],
         eachSeries = function (arr, iterator, callback) {
             callback = callback || function () {};
@@ -87,8 +92,6 @@ $(function () {
     eachSeries(scripts, getScript, initTable);
 });
 
-
-
 function getScript(url, callback) {
     var head = document.getElementsByTagName('head')[0];
     var script = document.createElement('script');
@@ -106,7 +109,6 @@ function getScript(url, callback) {
             script.onload = script.onreadystatechange = null;
         }
     };
-
     head.appendChild(script);
     return undefined;
 }
