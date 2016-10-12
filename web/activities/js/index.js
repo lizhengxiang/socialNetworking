@@ -14,7 +14,7 @@ $(function () {
 
     window.operateEvents = {
         'click .like': function (e, value, row, index) {
-            window.location.href="/activities/details.html&id="+row.id;
+            window.location.href="/activities/details.html?id="+row.id;
         }
     };
 

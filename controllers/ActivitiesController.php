@@ -37,6 +37,13 @@ class ActivitiesController extends Controller
         return $data;
     }
 
+    //获取列
+    public function actionColumn(){
+        $request = Yii::$app->request->get();
+        $data = $this->service->getColumn($request);
+        $data = json_encode($data);
+        return $data;
+    }
     //获取报名数据
     public function actionGetdetails(){
         $request = Yii::$app->request->get();

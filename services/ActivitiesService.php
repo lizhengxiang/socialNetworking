@@ -116,5 +116,9 @@ class ActivitiesService
             return $this->tools->result('',0,0);
         }
     }
+    
+    public function getColumn($args){
+        
+    }
 
 }
