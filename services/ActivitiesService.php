@@ -56,4 +56,15 @@ class ActivitiesService
         }
     }
 
+    public function getActivities($args){
+        $data=[];
+        $data['total'] = 800;
+        for ($i=0; $i < 10; $i++){
+            $data['rows'][$i]['id'] = $i;
+            $data['rows'][$i]['price'] = $i;
+            $data['rows'][$i]['name'] = 'lizhengxiang'.$i;
+        }
+        return $data;
+    }
+
 }
