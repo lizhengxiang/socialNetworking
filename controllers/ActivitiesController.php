@@ -24,7 +24,6 @@ class ActivitiesController extends Controller
     public function actionCreateactivities(){
         $request = Yii::$app->request->post();
         $data = $this->service->createActivities($request);
-        $data = json_encode($data);
         return $data;
 
     }
@@ -39,9 +38,8 @@ class ActivitiesController extends Controller
 
     //获取列
     public function actionColumn(){
-        $request = Yii::$app->request->get();
+        $request = Yii::$app->request->post();
         $data = $this->service->getColumn($request);
-        $data = json_encode($data);
         return $data;
     }
     //获取报名数据

@@ -24,7 +24,7 @@ class ActivitiesService
             $columnName = '';
             $name = 'a'.md5(rand(1,100).time());
             $authorization = md5($name);
-            $sql = "CREATE TABLE ".$name."(`id` int(3) NOT NULL AUTO_INCREMENT COMMENT 'ID',";
+            $sql = "CREATE TABLE example.".$name."(`id` int(3) NOT NULL AUTO_INCREMENT COMMENT 'ID',";
             foreach ($args as $key => $value){
                 if($tag % 2 == 0){
                     if('' == $value){
@@ -41,8 +41,8 @@ class ActivitiesService
             //开启事物，万一一个表插入成功，另一个表不成功怎么办，字段名称用逗号隔开
             $tr = Yii::$app->db->beginTransaction();
             try {
-                /*Yii::$app->db->createCommand($sql)
-                    ->execute();*/
+                Yii::$app->db->createCommand($sql)
+                    ->execute();
                 Yii::$app->db->createCommand('insert INTO activities(userid,tablename,activitiesname,`column`,`authorization`) VALUES (:userid,:tablename,:activitiesname,:colum,:autho)',[
                     ':userid' => $userid,':tablename' => $name,':activitiesname' => $activitiesname,':colum' => $columnName,'autho'=>$authorization
                 ])->execute();
@@ -95,18 +95,28 @@ class ActivitiesService
         if(!preg_match('/^\d*$/',$offset) || !preg_match('/^\d*$/',$limit)){
             return $this->tools->result('',10,0);
         }
+        $id = isset($args['id'])?$args['id']:-1;
+        if($id == -1||!preg_match('/^\d*$/',$id)){
+            return $this->tools->result('',10,0);
+        }
         if($userid != ''){
-            $count = (new \yii\db\Query())
-                ->select(['id', 'activitiesname','authorization','authorization','createtime','deleted'])
+            $row = (new \yii\db\Query())
+                ->select(['userid', 'tablename'])
                 ->from('activities')
-                ->where(['userid'=>$userid])
+                ->where('id=:id')
+                ->addParams([':id' => $id])
+                ->one();
+            //这里判断下是不是该用户自己创建的活动
+            if($row['userid'] != $userid){
+                return $this->tools->result('',10,0);
+            }
+            $count = (new \yii\db\Query())
+                ->from('example.'.$row['tablename'])
                 ->count();
             $result = (new \yii\db\Query())
-                ->select(['id', 'activitiesname','authorization','authorization','createtime','deleted'])
-                ->from('activities')
+                ->from('example.'.$row['tablename'])
                 ->limit($limit)
                 ->offset($offset)
-                ->where(['userid'=>$userid])
                 ->all();
             $data=[];
             $data['total'] = $count;
@@ -118,7 +128,34 @@ class ActivitiesService
     }
     
     public function getColumn($args){
-        
+        $this->tools = new Tools();
+        $userid = Yii::$app->user->getId();
+        $id = isset($args['id'])?$args['id']:-1;
+        if($id == -1||!preg_match('/^\d*$/',$id)){
+            return $this->tools->result('',10,0);
+        }
+        if($userid != ''){
+            $row = (new \yii\db\Query())
+                ->select(['userid', 'column'])
+                ->from('activities')
+                ->where('id=:id')
+                ->addParams([':id' => $id])
+                ->one();
+            //这里判断下是不是该用户自己创建的活动
+            if($row['userid'] != $userid){
+                return $this->tools->result('',10,0);
+            }
+            $column = explode(',',$row['column']);
+            $len = sizeof($column);
+            $data=[];
+            //$len-1是应为多一个逗号
+            for ($i = 0; $i < $len-1; $i++){
+                $data[$i] = explode('-',$column[$i]);
+            }
+            return $this->tools->result($data,1,0);
+        }else{
+            return $this->tools->result('',0,0);
+        }
     }
 
 }
