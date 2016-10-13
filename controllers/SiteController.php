@@ -14,10 +14,12 @@ use yii\di\ServiceLocator;
 use yii\caching\FileCache;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
-require dirname(dirname(__FILE__)).'/excel/PHPExcel.php';
-use app\models\PHPExcel;
+
 class SiteController extends Controller
 {
+
+
+
     public function actionIndex()
     {
         //Yii::$app->redis->set('test','111');  //设置redis缓存
@@ -31,9 +33,9 @@ class SiteController extends Controller
     {
         Yii::$app->user->isGuest;
         //throw new \yii\web\HttpException(500);
-        if (!Yii::$app->user->isGuest) {
+        /*if (!Yii::$app->user->isGuest) {
             return $this->goBack();
-        }
+        }*/
         
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {

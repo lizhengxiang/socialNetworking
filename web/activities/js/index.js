@@ -58,6 +58,8 @@ $(function () {
 
     var scripts = [
             location.search.substring(1) || '/public/js/bootstraptable/js/bootstrap-table.js',
+            '/public/js/bootstraptable/js/bootstrap-table-export.js',
+            '/public/js/bootstraptable/js/tableExport.js',
         ],
         eachSeries = function (arr, iterator, callback) {
             callback = callback || function () {};
