@@ -52,6 +52,12 @@ $config = [
             'hostname' => '127.0.0.1',
             'port' => 6379,
         ],
+        'mongodb' => [
+            'class' => '\yii\mongodb\Connection',
+            'dsn' => 'mongodb://developer:password@127.0.0.1:27017/mydatabase',
+            'enableLogging' => true, // enable logging
+            'enableProfiling' => true, // enable profiling
+        ],
     ],
     'params' => $params,
 ];

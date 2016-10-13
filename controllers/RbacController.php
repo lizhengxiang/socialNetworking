@@ -22,6 +22,9 @@ class RbacController extends Controller
                     'class' => 'yii\rbac\PhpManager',
                 ],
             ],
+            'cache' => [
+                'class' => 'yii\mongodb\Cache',
+            ],
         ];
     }
 

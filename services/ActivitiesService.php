@@ -2,7 +2,9 @@
 namespace app\services;
 use Yii;
 use app\models\Tools;
+use app\models\Excel;
 use yii\db\ActiveRecord;
+
 /**
  * Created by PhpStorm.
  * User: 'lizhengxiang'
@@ -14,6 +16,7 @@ class ActivitiesService
 {
     private $tools;
 
+   
     public function createActivities($args)
     {
         $this->tools = new Tools();
@@ -56,6 +59,9 @@ class ActivitiesService
         }
     }
 
+    /*
+     * 获取创建的活动　2016-10-12 23:44
+     */
     public function getActivities($args){
         $this->tools = new Tools();
         $userid = Yii::$app->user->getId();
@@ -76,6 +82,7 @@ class ActivitiesService
                 ->limit($limit)
                 ->offset($offset)
                 ->where(['userid'=>$userid])
+                ->orderBy('createtime DESC')
                 ->all();
             $data=[];
             $data['total'] = $count;
@@ -85,6 +92,7 @@ class ActivitiesService
             return $this->tools->result('',0,0);
         }
     }
+
 
     //获取报名详情
     public function Getdetails($args){
@@ -126,7 +134,10 @@ class ActivitiesService
             return $this->tools->result('',0,0);
         }
     }
-    
+
+    /*
+     * 获取表列　2016-10-12 23:44
+     */
     public function getColumn($args){
         $this->tools = new Tools();
         $userid = Yii::$app->user->getId();
@@ -157,5 +168,23 @@ class ActivitiesService
             return $this->tools->result('',0,0);
         }
     }
+    /**
+     * User: 'lizhengxiang'
+     * Date:16-10-13 10:55
+     * content：
+     */
+    public function Export($args){
+        $excel = new Excel();
 
+        $data = array(
+            array('姓名','标题','文章','价格','数据5','数据6','数据7'),
+            array('数据1','数据2','数据3','数据4','数据5','数据6','数据7'),
+            array('数据1','数据2','数据3','数据4','数据5','数据6','数据7'),
+            array('数据1','数据2','数据3','数据4','数据5','数据6','数据7'),
+            array('数据1','数据2','数据3','数据4','数据5','数据6','数据7'),
+            array('数据1','数据2','数据3','数据4','数据5','数据6','数据7')
+        );
+
+        $excel->download('testcsv.csv', $data);
+    }
 }

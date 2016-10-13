@@ -14,14 +14,15 @@ use yii\di\ServiceLocator;
 use yii\caching\FileCache;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
+require dirname(dirname(__FILE__)).'/excel/PHPExcel.php';
+use app\models\PHPExcel;
 class SiteController extends Controller
 {
     public function actionIndex()
     {
-        //echo phpinfo();exit();
-        //Yii::$app->redis->set('test','rerere');  //设置redis缓存
-        /*echo Yii::$app->redis->get('test');   //读取redis缓存
-        exit;*/
+        //Yii::$app->redis->set('test','111');  //设置redis缓存
+        echo Yii::$app->redis->get('test');   //读取redis缓存
+        exit;
         return $this->render('index');
     }
 

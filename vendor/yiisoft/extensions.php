@@ -66,6 +66,14 @@ return array (
         array (
             '@yii/redis' => $vendorDir . '/yiisoft/yii2-redis',
         ),
-    ),  
-
+    ),
+  'yiisoft/yii2-mongodb' =>
+      array (
+          'name' => 'yiisoft/yii2-mongodb',
+          'version' => '2.2.0.0',
+          'alias' =>
+              array (
+                  '@yii/mongodb' => $vendorDir . '/yiisoft/yii2-mongodb',
+              ),
+      ),
 );
