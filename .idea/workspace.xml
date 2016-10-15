@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22102e4f-4e2c-41cb-bbd3-2dfaceea0d49" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/mapchat/index.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/mapchat/js/index.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/public/js/layer/skin/default/icon-ext.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/public/js/layer/skin/default/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/public/js/layer/skin/default/loading-0.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/public/js/layer/skin/default/loading-1.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/public/js/layer/skin/default/loading-2.gif" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/rbac/items.php" afterPath="$PROJECT_DIR$/web/mapchat/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SiteController.php" afterPath="$PROJECT_DIR$/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/personal/index.html" afterPath="$PROJECT_DIR$/web/personal/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/js/layer/layui" afterPath="$PROJECT_DIR$/web/public/js/layer/layui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/mapchat/index.html" afterPath="$PROJECT_DIR$/web/mapchat/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/mapchat/js/index.js" afterPath="$PROJECT_DIR$/web/mapchat/js/index.js" />
     </list>
     <ignored path="socialNetworking.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,38 +36,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/mapchat/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+            <state relative-caret-position="514">
+              <caret line="73" column="42" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1476527520067" expanded="false" signature="3144:9500" ph="{...}" />
+                <marker date="1476530120545" expanded="false" signature="3499:9855" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/mapchat/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-189">
-              <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+            <state relative-caret-position="327">
+              <caret line="215" column="29" selection-start-line="215" selection-start-column="29" selection-end-line="215" selection-end-column="29" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2607">
-              <caret line="334" column="6" selection-start-line="334" selection-start-column="6" selection-end-line="334" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#body#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#nav#0;n#body#0;n#div#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -138,8 +116,8 @@
         <option value="$PROJECT_DIR$/web/mapchat/index.json" />
         <option value="$PROJECT_DIR$/web/layui/test/tree.html" />
         <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/mapchat/js/index.js" />
         <option value="$PROJECT_DIR$/web/mapchat/index.html" />
+        <option value="$PROJECT_DIR$/web/mapchat/js/index.js" />
       </list>
     </option>
   </component>
@@ -452,12 +430,12 @@
       <workItem from="1476408610360" duration="717000" />
       <workItem from="1476430471950" duration="296000" />
       <workItem from="1476448482063" duration="7718000" />
-      <workItem from="1476502632915" duration="13790000" />
+      <workItem from="1476502632915" duration="17315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="609321000" />
+    <option name="totallyTimeSpent" value="612846000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -895,7 +873,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2607">
+        <state relative-caret-position="2859">
           <caret line="334" column="6" selection-start-line="334" selection-start-column="6" selection-end-line="334" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#body#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -904,22 +882,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/mapchat/js/index.js">
+    <entry file="file://$PROJECT_DIR$/web/mapchat/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="514">
+          <caret line="73" column="42" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1476530120545" expanded="false" signature="3499:9855" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/mapchat/index.html">
+    <entry file="file://$PROJECT_DIR$/web/mapchat/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1476527520067" expanded="false" signature="3144:9500" ph="{...}" />
-          </folding>
+        <state relative-caret-position="327">
+          <caret line="215" column="29" selection-start-line="215" selection-start-column="29" selection-end-line="215" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

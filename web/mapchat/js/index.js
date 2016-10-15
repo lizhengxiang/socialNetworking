@@ -19,34 +19,27 @@ layui.use('layim', function(layim){
             ,type: 'get' //默认get，一般可不填
             ,data: {} //额外参数
         }
-
-        //配置我的信息（如果设定了该参数，则优先读取该参数，如果没有，这读取init返回的mine信息）
-
         //获取群员接口
         ,members: {
             url: '' //接口地址（返回的数据格式见下文）
             ,type: 'get' //默认get，一般可不填
             ,data: {} //额外参数
         }
-
         //上传图片接口（返回的数据格式见下文）
         ,uploadImage: {
             url: '' //接口地址（返回的数据格式见下文）
             ,type: 'post' //默认post
         }
-
         //上传文件接口（返回的数据格式见下文）
         ,uploadFile: {
             url: '' //接口地址（返回的数据格式见下文）
             ,type: 'post' //默认post
         }
-
         //增加皮肤选择，如果不想增加，可以剔除该项
         ,skin: [
             'http://xxx.com/skin.jpg',
 
         ]
-
         ,brief: false //是否简约模式（默认false，如果只用到在线客服，且不想显示主面板，可以设置 true）
         ,title: '我的LayIM' //主面板最小化后显示的名称
         ,min: false //用于设定主面板是否在页面打开时，始终最小化展现。默认false，即记录上次展开状态。
@@ -57,7 +50,7 @@ layui.use('layim', function(layim){
         ,right: '0px' //默认0px，用于设定主面板右偏移量。该参数可避免遮盖你页面右下角已经的bar。
         ,chatLog: 'http://socialnetworking.com/mapchat/index.html' //聊天记录地址（如果未填则不显示）
         ,find: '/find/' //查找好友/群的地址（如果未填则不显示）
-        ,copyright: false //是否授权，如果通过官网捐赠获得LayIM，此处可填true
+        ,copyright: true //是否授权，如果通过官网捐赠获得LayIM，此处可填true
     });
 
     //监听发送消息
@@ -181,3 +174,69 @@ layui.use('layim', function(layim){
     });
 
 });
+
+var map = new AMap.Map('container', {
+    resizeEnable: true,
+    center: [110.408075, 39.950187-3],
+    zoom: 5
+});
+map.setMapStyle('blue_night');
+
+var marker=[];
+
+marker[0] = new AMap.Marker({
+    position: [110.408075, 39.950187],
+    draggable: true,
+    cursor: 'move'
+});
+marker[0].setMap(map);
+// 设置点标记的动画效果，此处为弹跳效果
+marker[0].setAnimation('AMAP_ANIMATION_BOUNCE');
+
+marker[1] = new AMap.Marker({
+    position: [110.408075+5, 39.950187-3],
+    draggable: true,
+    cursor: 'move'
+});
+marker[1].setMap(map);
+// 设置点标记的动画效果，此处为弹跳效果
+marker[1].setAnimation('AMAP_ANIMATION_BOUNCE');
+
+
+marker[2] = new AMap.Marker({
+    position: [110.408075+5, 39.950187-3],
+    draggable: true,
+    cursor: 'move'
+});
+marker[2].setMap(map);
+// 设置点标记的动画效果，此处为弹跳效果
+marker[2].setAnimation('AMAP_ANIMATION_BOUNCE');
+
+
+marker[3] = new AMap.Marker({
+    position: [110.408075+5, 39.950187-9],
+    draggable: true,
+    cursor: 'move'
+});
+marker[3].setMap(map);
+// 设置点标记的动画效果，此处为弹跳效果
+marker[3].setAnimation('AMAP_ANIMATION_BOUNCE');
+
+
+marker[4] = new AMap.Marker({
+    position: [110.408075+8, 39.950187-7],
+    draggable: true,
+    cursor: 'move'
+});
+marker[4].setMap(map);
+// 设置点标记的动画效果，此处为弹跳效果
+marker[4].setAnimation('AMAP_ANIMATION_BOUNCE');
+
+marker[5] = new AMap.Marker({
+    position: [110.408075-8, 39.950187-7],
+    draggable: true,
+    cursor: 'move'
+});
+marker[5].setMap(map);
+// 设置点标记的动画效果，此处为弹跳效果
+marker[5].setAnimation('AMAP_ANIMATION_BOUNCE');
