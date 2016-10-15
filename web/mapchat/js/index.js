@@ -177,7 +177,7 @@ layui.use('layim', function(layim){
 
 var map = new AMap.Map('container', {
     resizeEnable: true,
-    center: [110.408075, 39.950187-3],
+    center: [110.408075, 34.950187],
     zoom: 5
 });
 map.setMapStyle('blue_night');

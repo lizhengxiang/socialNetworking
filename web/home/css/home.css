@@ -60,6 +60,28 @@ li{
     color:#E8E8E8;
     text-decoration:none;
 }
+
+.submenu {
+    width:360px;/*下拉宽度*/
+    z-index: 1000;
+    display:none;
+}
+.submenu li {
+    /**/width:115px;float:left; background:#55acee;
+    height:80px;
+}
+.submenu li:hover{
+    background: #008eb7;
+    z-index:1000;
+}
+.submenu li:hover a {
+    color: #fff;
+}
+ li:hover .submenu, .menu > li:focus .submenu {
+    z-index: 10000;
+    display:block;
+}
+
 .head_center .head_nav ul li a:hover{
     color:#FFB800;
 }
