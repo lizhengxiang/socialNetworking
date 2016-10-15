@@ -182,61 +182,11 @@ var map = new AMap.Map('container', {
 });
 map.setMapStyle('blue_night');
 
-var marker=[];
-
-marker[0] = new AMap.Marker({
-    position: [110.408075, 39.950187],
+var marker = new AMap.Marker({
+    position: map.getCenter(),
     draggable: true,
     cursor: 'move'
 });
-marker[0].setMap(map);
+marker.setMap(map);
 // 设置点标记的动画效果，此处为弹跳效果
-marker[0].setAnimation('AMAP_ANIMATION_BOUNCE');
-
-marker[1] = new AMap.Marker({
-    position: [110.408075+5, 39.950187-3],
-    draggable: true,
-    cursor: 'move'
-});
-marker[1].setMap(map);
-// 设置点标记的动画效果，此处为弹跳效果
-marker[1].setAnimation('AMAP_ANIMATION_BOUNCE');
-
-
-marker[2] = new AMap.Marker({
-    position: [110.408075+5, 39.950187-3],
-    draggable: true,
-    cursor: 'move'
-});
-marker[2].setMap(map);
-// 设置点标记的动画效果，此处为弹跳效果
-marker[2].setAnimation('AMAP_ANIMATION_BOUNCE');
-
-
-marker[3] = new AMap.Marker({
-    position: [110.408075+5, 39.950187-9],
-    draggable: true,
-    cursor: 'move'
-});
-marker[3].setMap(map);
-// 设置点标记的动画效果，此处为弹跳效果
-marker[3].setAnimation('AMAP_ANIMATION_BOUNCE');
-
-
-marker[4] = new AMap.Marker({
-    position: [110.408075+8, 39.950187-7],
-    draggable: true,
-    cursor: 'move'
-});
-marker[4].setMap(map);
-// 设置点标记的动画效果，此处为弹跳效果
-marker[4].setAnimation('AMAP_ANIMATION_BOUNCE');
-
-marker[5] = new AMap.Marker({
-    position: [110.408075-8, 39.950187-7],
-    draggable: true,
-    cursor: 'move'
-});
-marker[5].setMap(map);
-// 设置点标记的动画效果，此处为弹跳效果
-marker[5].setAnimation('AMAP_ANIMATION_BOUNCE');
+marker.setAnimation('AMAP_ANIMATION_BOUNCE');
