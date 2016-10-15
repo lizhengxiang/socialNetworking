@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-US" style="margin: 0px;" xmlns="http://www.w3.org/1999/html">
+<html lang="en-US" style="margin: 0px;">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>G7love</title>
     <!--vue.js-->
     <script type="text/javascript" src="/public/js/vue/vue.js"></script>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
@@ -93,10 +92,10 @@
     </nav><!--小导航条-->
 </div>
 <div class="container">
-    <div style="width: 200px;height: 200px;top: 320px;position:absolute; background: #ffffff; padding: 10px;">
+    <div style="width: 200px;height: 200px;top: 280px;position:absolute; background: #ffffff; padding: 10px;">
         <img v-bind:src = informationData.headPortrait width="180px;" height="180px;" class="img-rounded">
     </div>
-    <div style="width: 250px;position: absolute;top: 520px;">
+    <div style="width: 250px;position: absolute;top: 480px;">
         <p style="font-size: 18px;font-weight: 700;">{{informationData.nickname}}</p>
         <p style="color: #8899a6;line-height: 0px;">{{informationData.school}}</p>
         <p>{{informationData.motto}}</p>
@@ -115,7 +114,7 @@
             </div>
         </div>
     </div><!--个人信息-->
-    <div  class="row" style="margin-top: 480px;margin-left: 260px;">
+    <div  class="row" style="margin-top: 420px;margin-left: 260px;">
         <div class="col-md-9">
             <template v-for="res in items" track-by="$index">
                 <div class="row masonry-container">
