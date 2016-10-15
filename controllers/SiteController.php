@@ -22,8 +22,6 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        //Yii::$app->redis->set('test','111');  //设置redis缓存
-        echo Yii::$app->redis->get('test');   //读取redis缓存
         exit;
         return $this->render('index');
     }
