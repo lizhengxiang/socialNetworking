@@ -22,6 +22,13 @@
 </head>
 <body>
 <div id="container" class="map" tabindex="0"></div>
+<div  style="background-color: #55acee;left:0px;position:absolute;bottom: 20px;font-size:12px;">
+    <input type='radio' onclick='refresh(this.value)' checked name='mapStyle' value='normal'>normal
+    <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='blue_night'>blue_night
+    <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='light'>light
+    <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='fresh'>fresh
+    <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='dark'>dark
+</div>
 <!--<div class="site-demo-button">
     <button class="layui-btn site-demo-layim" data-type="chat">创造一个临时会话</button>
     <button class="layui-btn site-demo-layim" data-type="message">制造一个好友发过来的消息</button>

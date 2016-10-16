@@ -180,7 +180,9 @@ var map = new AMap.Map('container', {
     center: [110.408075, 34.950187],
     zoom: 5
 });
-map.setMapStyle('blue_night');
+function refresh(e) {
+    map.setMapStyle(e);
+}
 
 var marker = new AMap.Marker({
     position: map.getCenter(),
