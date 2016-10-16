@@ -1,3 +1,18 @@
+var flg = 0;
+
+load('home', 'loginjudge', {}, function(resultData) {
+    flg=resultData['data'];
+    if(flg){
+        $("#postingId").show();
+        $("#loginId").hide();
+        $("#regis").hide();
+    }else {
+        $("#postingId").hide();
+        $("#loginId").show();
+        $("#regis").show();
+    }
+});
+
 //写入Cookie
 function setCookie(name, value, seconds) {
     seconds = seconds || 0;   //seconds有值就直接赋值，没有为0，这个根php不一样。
@@ -25,26 +40,54 @@ function home() {
     $('iframe').attr('src', href);
 }
 function personal() {
-    var href = '/personal/index.html';
-    setCookie('url',href,500000);
-    $('iframe').attr('src', href);
+    if(flg){
+        var href = '/personal/index.html';
+        setCookie('url',href,500000);
+        $('iframe').attr('src', href);
+    }else {
+        layer.msg('请登陆后再操作', {
+            offset: 0,
+            shift: 12
+        });
+    }
 }
 
 function mapchat() {
-    var href = '/mapchat/index.html';
-    setCookie('url',href,500000);
-    $('iframe').attr('src', href);
+    if(flg){
+        var href = '/mapchat/index.html';
+        setCookie('url',href,500000);
+        $('iframe').attr('src', href);
+    }else {
+        layer.msg('请登陆后再操作', {
+            offset: 0,
+            shift: 12
+        });
+    }
 }
 
 function createactivities() {
-    var href = '/activities/createactivities.html';
-    setCookie('url',href,500000);
-    $('iframe').attr('src', href);
+    if(flg){
+        var href = '/activities/createactivities.html';
+        setCookie('url',href,500000);
+        $('iframe').attr('src', href);
+    }else {
+        layer.msg('请登陆后再操作', {
+            offset: 0,
+            shift: 12
+        });
+    }
 }
 function activities() {
-    var href = '/activities/index.html';
-    setCookie('url',href,500000);
-    $('iframe').attr('src', href);
+    if(flg){
+        var href = '/activities/index.html';
+        setCookie('url',href,500000);
+        $('iframe').attr('src', href);
+    }else {
+        layer.msg('请登陆后再操作', {
+            offset: 0,
+            shift: 12
+        });
+    }
 }
 
 function genSearchParams()

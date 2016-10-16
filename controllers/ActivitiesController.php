@@ -55,6 +55,5 @@ class ActivitiesController extends Controller
         $request = Yii::$app->request->get();
         $data = $this->service->Export($request);
     }
-
-
+    
 }
