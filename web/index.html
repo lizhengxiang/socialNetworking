@@ -55,7 +55,7 @@
                         <a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> 登录</a>
                     </li>
                     <li>
-                        <a data-toggle="modal" data-target="#registered"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 注册</a>
+                        <a data-toggle="modal" data-target="#regist"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 注册</a>
                     </li>
                 </ul>
             </div>
@@ -74,19 +74,21 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">登录</h4>
             </div>
-            <div class="modal-body" style="margin-left: 125px;">
-                <div class="form-group">
-                    <input  class="form-control" id="inputEmail1" style="width: 300px;" placeholder="账号">
+            <form id="login">
+                <div class="modal-body" style="margin-left: 125px;">
+                    <div class="form-group">
+                        <input  class="form-control" id="username" name="LoginForm[username]" style="width: 300px;" placeholder="账号">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" name="LoginForm[password]" style="width: 300px;" placeholder="密码">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input name="LoginForm[rememberMe]" type="checkbox" value="1"> 记住我
+                        </label>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="inputPassword1" style="width: 300px;" placeholder="密码">
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> 记住我
-                    </label>
-                </div>
-            </div>
+            </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" id ="submit" class="btn btn-primary">登录</button>
@@ -95,7 +97,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="registered" tabindex="-1" role="dialog" aria-labelledby="myModalLabe" aria-hidden="true" style="margin-top: 100px;">
+<div class="modal fade" id="regist" tabindex="-1" role="dialog" aria-labelledby="myModalLabe" aria-hidden="true" style="margin-top: 100px;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

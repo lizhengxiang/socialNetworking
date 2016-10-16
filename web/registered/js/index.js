@@ -6,6 +6,7 @@ function genSearchParams()
 }
 $(document).ready(function() {
     load('registered', 'provinces', {}, function(resultData) {
+        resultData=resultData['data']
         var temp = '';
         for(var i =0; i<resultData.length; i++){
             temp += '<option value ='+resultData[i].id+'>'+resultData[i].name+'</option>';

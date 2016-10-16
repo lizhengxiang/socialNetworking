@@ -1,7 +1,7 @@
 <?php
 namespace app\services;
 use Yii;
-use app\models\tools;
+use app\models\Tools;
 /**
  * @author Bill <lizhengxiang@huoyunren.com>
  */
@@ -12,10 +12,12 @@ class RegisteredService
      */
     public function searchProvinces($args)
     {
+        $this->tools = new Tools();
         $parentid = isset($args['parentid'])? $args['parentid']: 0 ;
-        return $posts = Yii::$app->db->createCommand('SELECT name, id FROM school WHERE parentid=:parentid')
+        $posts = Yii::$app->db->createCommand('SELECT name, id FROM school WHERE parentid=:parentid')
             ->bindValue(':parentid', $parentid)
             ->queryAll();
+        return $this->tools->result($posts,1,0);
     }
 
     /*
@@ -45,6 +47,7 @@ class RegisteredService
      * 创建用户
      */
     public function Registered($args){
+        $this->tools = new Tools();
         $count = (new \yii\db\Query())
             ->from('registered')->where('email=:email', [':email' => $args['email']])->count();
         if(!$count){
@@ -59,7 +62,7 @@ class RegisteredService
                 ':userid' => $args['userid'],
                 ':birthday' => $args['year'].'-'.sprintf("%02d",$args['mouth']).'-'.sprintf("%02d",$args['day'])
             ])->execute();
-            return $state;
+            return $this->tools->result($state,1,0);
         }else{
             throw new \yii\base\UserException('邮箱已经存在',200);
         }

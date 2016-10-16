@@ -65,7 +65,6 @@ class RegisteredController extends Controller
         $request = [];
         $request['parentid'] = 0;
         $data = $this->service->searchProvinces($request);
-        $data = json_encode($data);
         return $data;
 
     }
@@ -76,7 +75,6 @@ class RegisteredController extends Controller
     public function actionGetschool(){
         $request = Yii::$app->request->post();
         $data = $this->service->searchProvinces($request);
-        $data = json_encode($data);
         return $data;
     }
 
@@ -92,7 +90,7 @@ class RegisteredController extends Controller
             && !empty($request['nickname'])
         ){
             $data = $this->service->Registered($request);
-            return $data = json_encode($data);
+            return $data;
         }else{
             throw new \yii\base\UserException('所有的值不允许为空',1004);
         }

@@ -22,13 +22,13 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        exit;
-        return $this->render('index');
+        return $this->redirect('http://socialnetworking.com');
     }
 
 
     public function actionLogin()
     {
+        var_dump(Yii::$app->request->post());exit();
         Yii::$app->user->isGuest;
         //throw new \yii\web\HttpException(500);
         /*if (!Yii::$app->user->isGuest) {

@@ -53,6 +53,11 @@ function genSearchParams()
     return searchParams;
 }
 
+function loginForm()
+{
+    var searchParams = $("#login").serializeArray();
+    return searchParams;
+}
 $(function () {
     if(getCookie('url') == null){
         var href = '/home/index.html';
@@ -64,6 +69,7 @@ $(function () {
 
     //注册
     load('registered', 'provinces', {}, function(resultData) {
+        resultData = resultData['data'];
         var temp = '';
         for(var i =0; i<resultData.length; i++){
             temp += '<option value ='+resultData[i].id+'>'+resultData[i].name+'</option>';
@@ -73,6 +79,7 @@ $(function () {
     $("#provinces").change( function() {
         var provinces = $('#provinces option:selected').val();
         load('registered', 'getschool', {'parentid':provinces}, function(resultData) {
+            resultData = resultData['data'];
             var temp = '';
             for(var i =0; i<resultData.length; i++){
                 temp += '<option value ='+resultData[i].id+'>'+resultData[i].name+'</option>';
@@ -129,7 +136,7 @@ $(function () {
         }
         if(!tag){
             load('registered', 'registered', registeredArgs, function(resultData) {
-                if(resultData == 1){
+                if(resultData['data'] == 1){
                     layer.msg('注册成功', {
                         offset: 0,
                         shift: 12
@@ -143,6 +150,40 @@ $(function () {
             });
         }
     });
-    
-    
+
+    $("#submit").click(function () {
+        var tag = 0;
+        var login =loginForm();
+        if(login[0].value.length < 1 || login[0].value.length > 10 ){
+            layer.tips('用户名不能为空', '#username', {
+                tips: [4, '#78BA32'],
+                tipsMore: true
+            });
+            tag = 1;
+        }
+        if(login[1].value.length < 1 || login[1].value.length > 10 ){
+            layer.tips('密码不能为空', '#password', {
+                tips: [4, '#78BA32'],
+                tipsMore: true
+            });
+            tag = 1;
+        }
+        if(!tag){
+            load('login', 'login', login, function(resultData) {
+                if(resultData['data']){
+                    layer.msg(resultData['data'], {
+                        offset: 0,
+                        shift: 12
+                    });
+                    window.location.reload();
+                }else {
+                    layer.msg('登陆失败，用户名或密码错误', {
+                        offset: 0,
+                        shift: 12
+                    });
+                }
+            });
+        }
+    })
+
 });
