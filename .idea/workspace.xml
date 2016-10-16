@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/services/ActivitiesService.php" line="137" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22102e4f-4e2c-41cb-bbd3-2dfaceea0d49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/js/layer/layui" afterPath="$PROJECT_DIR$/web/public/js/layer/layui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="22102e4f-4e2c-41cb-bbd3-2dfaceea0d49" name="Default" comment="" />
     <ignored path="socialNetworking.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -352,12 +349,12 @@
       <workItem from="1476430471950" duration="296000" />
       <workItem from="1476448482063" duration="7718000" />
       <workItem from="1476502632915" duration="39384000" />
-      <workItem from="1476585191628" duration="135000" />
+      <workItem from="1476585191628" duration="612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="635050000" />
+    <option name="totallyTimeSpent" value="635527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
