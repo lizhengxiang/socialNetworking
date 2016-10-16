@@ -22,13 +22,13 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->redirect('http://socialnetworking.com');
+        exit;
+        return $this->render('index');
     }
 
 
     public function actionLogin()
     {
-        var_dump(Yii::$app->request->post());exit();
         Yii::$app->user->isGuest;
         //throw new \yii\web\HttpException(500);
         /*if (!Yii::$app->user->isGuest) {
@@ -101,14 +101,14 @@ class SiteController extends Controller
     }
 
     public function actionUpload()
-    {
+    {           
         $model = new UploadForm();
 
         if (Yii::$app->request->isPost) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            if ($model->upload()) {
+            if ($name = $model->upload()) {
                 // 文件上传成功
-                return;
+                return $name;
             }
         }
 
