@@ -10,9 +10,6 @@
 <body>
 <div id="zyupload" class="zyupload"></div>
 <script type="text/javascript">
-    function abc() {
-        console.log(45);
-    }
     $(function(){
         // 初始化插件
         $("#zyupload").zyUpload({
@@ -54,6 +51,10 @@
                 console.info(response);
             }
         });
+        function abc() {
+            alert($("#exampleInput").val());
+            $("#uploadInf").append("<p>上传成功，文件地址是：" + $("#exampleInput").val() + "</p>");
+        }
     });
 
 </script>

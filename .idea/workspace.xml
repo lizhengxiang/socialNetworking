@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22102e4f-4e2c-41cb-bbd3-2dfaceea0d49" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/UploadController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/upload/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/RbacController.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SiteController.php" afterPath="$PROJECT_DIR$/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/UploadForm.php" afterPath="$PROJECT_DIR$/models/UploadForm.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/home/js/home.js" afterPath="$PROJECT_DIR$/web/home/js/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/js/upload/zyupload-1.0.0.min.js" afterPath="$PROJECT_DIR$/web/public/js/upload/zyupload-1.0.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/upload/index.html" afterPath="$PROJECT_DIR$/web/upload/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.js" afterPath="$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.js" />
     </list>
     <ignored path="socialNetworking.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +37,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/home/js/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="195" column="38" selection-start-line="195" selection-start-column="38" selection-end-line="195" selection-end-column="38" />
+            <state relative-caret-position="798">
+              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/upload/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="759">
+              <caret line="54" column="41" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -56,8 +60,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+            <state relative-caret-position="619">
+              <caret line="62" column="64" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="68" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#html#0;n#!!top" expanded="true" />
@@ -67,14 +71,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UploadController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/UploadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="210">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
               <folding>
                 <element signature="e#6#104#0#PHP" expanded="true" />
-                <element signature="e#133#141#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,13 +146,13 @@
         <option value="$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.css" />
         <option value="$PROJECT_DIR$/web/home/index.html" />
         <option value="$PROJECT_DIR$/views/site/upload.php" />
-        <option value="$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.js" />
-        <option value="$PROJECT_DIR$/web/upload/index.html" />
         <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/public/js/upload/zyupload-1.0.0.min.js" />
         <option value="$PROJECT_DIR$/models/UploadForm.php" />
         <option value="$PROJECT_DIR$/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/controllers/UploadController.php" />
+        <option value="$PROJECT_DIR$/web/upload/index.html" />
+        <option value="$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.js" />
+        <option value="$PROJECT_DIR$/web/public/js/upload/zyupload-1.0.0.min.js" />
         <option value="$PROJECT_DIR$/web/home/js/home.js" />
       </list>
     </option>
@@ -264,7 +267,59 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="upload" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socialNetworking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socialNetworking" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socialNetworking" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socialNetworking" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="upload" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,18 +494,18 @@
       <workItem from="1476448482063" duration="7718000" />
       <workItem from="1476502632915" duration="39384000" />
       <workItem from="1476585191628" duration="3025000" />
-      <workItem from="1476591380225" duration="19035000" />
+      <workItem from="1476591380225" duration="21014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="656975000" />
+    <option name="totallyTimeSpent" value="658954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23960066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23960066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293745" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -766,14 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="61" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/UploadedFile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -845,32 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/js/upload/zyupload-1.0.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="2218" selection-start-line="11" selection-start-column="2218" selection-end-line="11" selection-end-column="2218" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/upload/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="1335" selection-start-line="16" selection-start-column="1335" selection-end-line="16" selection-end-column="1335" />
-          <folding>
-            <marker date="1476624685964" expanded="true" signature="24236:24249" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/RbacController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-501">
@@ -899,10 +920,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/UploadController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#104#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+        <state relative-caret-position="619">
+          <caret line="62" column="64" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="68" />
           <folding>
             <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#html#0;n#!!top" expanded="true" />
@@ -911,22 +942,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/home/js/home.js">
+    <entry file="file://$PROJECT_DIR$/web/upload/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="195" column="38" selection-start-line="195" selection-start-column="38" selection-end-line="195" selection-end-column="38" />
+        <state relative-caret-position="759">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/UploadController.php">
+    <entry file="file://$PROJECT_DIR$/web/public/js/upload/zyupload-1.0.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="336">
+          <caret line="16" column="1341" selection-start-line="16" selection-start-column="1341" selection-end-line="16" selection-end-column="1341" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="1343" selection-start-line="16" selection-start-column="1331" selection-end-line="16" selection-end-column="1392" />
           <folding>
-            <element signature="e#6#104#0#PHP" expanded="true" />
-            <element signature="e#133#141#0#PHP" expanded="true" />
+            <marker date="1476628108874" expanded="true" signature="24236:24249" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/upload/zyupload-1.0.0.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
