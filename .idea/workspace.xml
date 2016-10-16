@@ -5,15 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22102e4f-4e2c-41cb-bbd3-2dfaceea0d49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LoginController.php" afterPath="$PROJECT_DIR$/controllers/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/RegisteredController.php" afterPath="$PROJECT_DIR$/controllers/RegisteredController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SiteController.php" afterPath="$PROJECT_DIR$/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/LoginForm.php" afterPath="$PROJECT_DIR$/models/LoginForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/RegisteredService.php" afterPath="$PROJECT_DIR$/services/RegisteredService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/home/js/home.js" afterPath="$PROJECT_DIR$/web/home/js/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/registered/js/index.js" afterPath="$PROJECT_DIR$/web/registered/js/index.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mail/layouts/html.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/site.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/index-test.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/darktooltip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/ips.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/layer/layer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/layer/skin/default/icon-ext.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/layer/skin/default/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/layer/skin/default/loading-0.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/layer/skin/default/loading-1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/layer/skin/default/loading-2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/layer/skin/layer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/sql.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/sss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/themes/login_index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/themes/registered_index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/home/css/home.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/home/icon/wechat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/home/icon/weibo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/home/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/js/ips.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/js/layer/layer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/js/layer/skin/default/icon-ext.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/js/layer/skin/default/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/js/layer/skin/default/loading-0.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/js/layer/skin/default/loading-1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/js/layer/skin/default/loading-2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/js/layer/skin/layer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/login/abc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/login/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/login/registered.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/registered/a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/registered/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/themes/login_index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/www/themes/registered_index.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favicon.ico" afterPath="$PROJECT_DIR$/web/favicon.ico" />
     </list>
     <ignored path="socialNetworking.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,18 +70,7 @@
     <favorites_list name="socialNetworking" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/home/js/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2961">
-              <caret line="141" column="33" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -197,20 +215,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="socialNetworking" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socialNetworking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socialNetworking" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,18 +389,18 @@
       <workItem from="1476448482063" duration="7718000" />
       <workItem from="1476502632915" duration="39384000" />
       <workItem from="1476585191628" duration="3025000" />
-      <workItem from="1476591380225" duration="4840000" />
+      <workItem from="1476591380225" duration="6171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="642780000" />
+    <option name="totallyTimeSpent" value="644111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19523017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19523017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293745" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -463,10 +467,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/layui/test/laypage.html" />
-    <entry file="file://$PROJECT_DIR$/web/layui/test/layout.html" />
-    <entry file="file://$PROJECT_DIR$/web/layui/test/layedit.html" />
-    <entry file="file://$PROJECT_DIR$/web/layui/test/laydate.html" />
     <entry file="file://$PROJECT_DIR$/web/layui/test/code.html" />
     <entry file="file://$PROJECT_DIR$/web/layui/test/element.html" />
     <entry file="file://$PROJECT_DIR$/web/layui/test/extend.html" />
@@ -730,7 +730,7 @@
         <state relative-caret-position="633">
           <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
           <folding>
-            <element signature="e#34#42#0#PHP" expanded="true" />
+            <element signature="e#34#42#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -748,26 +748,62 @@
         <state relative-caret-position="213">
           <caret line="30" column="38" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="e#35#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="86" column="88" selection-start-line="86" selection-start-column="88" selection-end-line="86" selection-end-column="88" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#35#60#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/home/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2961">
-          <caret line="141" column="33" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
+        <state relative-caret-position="945">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/1f3d87c0/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/1f3d87c0/jquery.min.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1152">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2300">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
