@@ -109,7 +109,10 @@ function posting(args) {
             shift: 12
         });
     }else {
-        console.log(args.length);
+        load('home', 'posting', {'data':args,'count':args['count']}, function(resultData) {
+            $("#post").click();
+            personal();
+        });
     }
 }
 $(function () {

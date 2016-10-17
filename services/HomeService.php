@@ -30,6 +30,18 @@ class HomeService
         }
     }
 
+    public function Posting($args){
+        $this->tools = new Tools();
+        $userid = Yii::$app->user->getId();
+        if($userid != ''){
+            $data=Yii::$app->db->createCommand('insert INTO dynamic(pic1,pic2,pic3,pic4,content,userid) VALUES (:pic1,:pic2,:pic3,:pic4,:content,:userid)',[
+                ':userid' => Yii::$app->user->getId(),':content'=>isset($args['count'])?$args['count']:'',':pic1'=>isset($args['data'][0])?$args['data'][0]:'',':pic2'=>isset($args['data'][1])?$args['data'][1]:'',':pic3'=>isset($args['data'][2])?$args['data'][2]:'',':pic4'=>isset($args['data'][3])?$args['data'][3]:''
+            ])->execute();
+            return $this->tools->result($data,1,0);
+        }else{
+            return $this->tools->result('',0,0);
+        }
+    }
 
     
 }

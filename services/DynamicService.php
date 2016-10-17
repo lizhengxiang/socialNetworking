@@ -41,7 +41,7 @@ class DynamicService
         if($id != 0 && preg_match('/^\d*$/',$id)){
             $rows->andWhere('dynamic.id =:id',[':id' => $id]);
         }
-        $result = $rows ->offset($offset-1)->limit($limit)->all();
+        $result = $rows ->offset($offset-1)->limit($limit)->addOrderBy('createtime DESC')->all();
         /*
          * 这里需要处理该用户有没有登陆判断有没有对动态操作AND动态发表离当前时间
          * @todo 计算时间有可能会耗时，dai观察看看会不会影响速度

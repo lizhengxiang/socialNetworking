@@ -19,12 +19,22 @@ class HomeController extends Controller
         $this->service = new HomeService();
     }
     /*
-     * 创建活动
+     * 查看有没有登陆
      */
     public function actionLoginjudge(){
         $data = $this->service->LoginJudge();
         return $data;
 
+    }
+
+    /**
+     * 发帖子
+     */
+    public function actionPosting()
+    {
+        $request = Yii::$app->request->post();
+        $data = $this->service->Posting($request);
+        return $data;
     }
 
 }
