@@ -1,5 +1,6 @@
 //小提示框
 /*;*/
+
 $(document).ready(function(){
     //绑定数据
     Vue.config.async = false;
@@ -77,6 +78,27 @@ $(document).ready(function(){
 
                         });
                         $("[data-toggle='tooltip']").tooltip();
+                        //用于处理图片流
+                        var $container = $('.masonry-container');
+                        $container.imagesLoaded( function () {
+                            $container.masonry({
+                                columnWidth: '.item',
+                                itemSelector: '.item'
+                            });
+                        });
+                        //Reinitialize masonry inside each panel after the relative tab link is clicked -
+                        $('a[data-toggle=tab]').each(function () {
+                            var $this = $(this);
+                            $this.on('shown.bs.tab', function () {
+                                $container.imagesLoaded( function () {
+                                    $container.masonry({
+                                        columnWidth: '.item',
+                                        itemSelector: '.item'
+                                    });
+                                });
+
+                            }); //end shown
+                        });  //end each
                     }else {
                         layer.msg('获取数据失败', {
                             offset: 0,
@@ -165,26 +187,5 @@ $(document).ready(function(){
 
     });
     $("[data-toggle='tooltip']").tooltip();
-    //用于处理图片流
-    var $container = $('.masonry-container');
-    $container.imagesLoaded( function () {
-        $container.masonry({
-            columnWidth: '.item',
-            itemSelector: '.item'
-        });
-    });
-    //Reinitialize masonry inside each panel after the relative tab link is clicked -
-    $('a[data-toggle=tab]').each(function () {
-        var $this = $(this);
-        $this.on('shown.bs.tab', function () {
-            $container.imagesLoaded( function () {
-                $container.masonry({
-                    columnWidth: '.item',
-                    itemSelector: '.item'
-                });
-            });
-
-        }); //end shown
-    });  //end each
 })
 
