@@ -53,11 +53,52 @@ layui.use('layim', function(layim){
         ,copyright: true //是否授权，如果通过官网捐赠获得LayIM，此处可填true
     });
 
+    var socket = new WebSocket('ws://127.0.0.1:9502');
+
+
+
     //监听发送消息
     layim.on('sendMessage', function(data){
         var To = data.to;
+
+        /*//连接成功时触发
+        socket.onopen = function(){
+            socket.send('XXX连接成功');
+            socket.send('Hi Server, I am LayIM!');
+        };*/
+
+        socket.send(JSON.stringify({
+            username: "纸飞机" //消息来源用户名
+            ,avatar: "http://tp1.sinaimg.cn/1571889140/180/40030060651/1" //消息来源用户头像
+            ,id: "100000" //聊天窗口来源ID（如果是私聊，则是用户id，如果是群聊，则是群组id）
+            ,type: "friend" //聊天窗口来源类型，从发送消息传递的to里面获取
+            ,content: "嗨，你好！本消息系离线消息。" //消息内容
+            ,mine: false //是否我发送的消息，如果为true，则会显示在右方
+            ,timestamp: 1467475443306 //服务端动态时间戳
+        }));
+
+        //连接成功时触发
+        /*socket.onopen = function(){
+
+        };*/
+
+        //监听收到的消息
+        /*socket.onmessage = function(res){
+            //res为接受到的值，如 {"emit": "messageName", "data": {}}
+            //emit即为发出的事件名，用于区分不同的消息
+            console.log(res)
+        };*/
+
+        //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
+        socket.onmessage = function(res){
+            if(res.emit === 'chatMessage'){
+                layim.getMessage(res.data); //res.data即你发送消息传递的数据（阅读：监听发送的消息）
+            }
+        };
+
         console.log(data);
         //演示自动回复
+/*
         setTimeout(function(){
             var obj = {};
             if(To.type === 'group'){
@@ -80,6 +121,7 @@ layui.use('layim', function(layim){
             }
             layim.getMessage(obj);
         }, 1000);
+*/
     });
     //监听在线状态的切换事件
     layim.on('online', function(data){
