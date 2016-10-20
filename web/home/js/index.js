@@ -72,6 +72,7 @@ $(document).ready(function(){
                                 praiseTag:resultData[i].praiseTag,
                                 forwardingNumTag:resultData[i].forwardingNumTag
                             });
+                            console.log(self.items);
                         }
                         //我也不知道为什么要放在在这里
                         $('*').darkTooltip({
