@@ -35,8 +35,11 @@ class DynamicService
             ->join('LEFT JOIN', 'registered', 'registered.userid = dynamic.userid')
             ->join('LEFT JOIN', 'school', 'registered.school = school.id');
         $rows->where('dynamic.deleted=0');
-        if(isset($userid)){
-            $rows->andWhere(['dynamic.userid'=>$userid]);
+        //get speack rules
+        if(!isset($args['tag'])){
+            if(isset($userid)){
+                $rows->andWhere(['dynamic.userid'=>$userid]);
+            }
         }
         if($id != 0 && preg_match('/^\d*$/',$id)){
             $rows->andWhere('dynamic.id =:id',[':id' => $id]);

@@ -44,7 +44,7 @@ $(document).ready(function(){
         methods: {
             getData: function() {
                 var self = this;
-                load('dynamic', 'getdynamic', {}, function(resultData) {
+                load('dynamic', 'getdynamic', {'tag':1}, function(resultData) {
                     var len = resultData['data'].length;
                     resultData = resultData['data'];
                     if(len >= 1){
